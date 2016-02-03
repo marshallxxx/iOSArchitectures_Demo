@@ -1,0 +1,50 @@
+PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
+  - JSONModel (1.2.0)
+  - OCMock (3.2.2)
+  - ReactiveCocoa (4.0.0):
+    - ReactiveCocoa/UI (= 4.0.0)
+    - Result (~> 1.0.1)
+  - ReactiveCocoa/Core (4.0.0):
+    - ReactiveCocoa/no-arc
+    - Result (~> 1.0.1)
+  - ReactiveCocoa/no-arc (4.0.0):
+    - Result (~> 1.0.1)
+  - ReactiveCocoa/UI (4.0.0):
+    - ReactiveCocoa/Core
+    - Result (~> 1.0.1)
+  - Result (1.0.1)
+  - Typhoon (3.4.5):
+    - Typhoon/no-arc (= 3.4.5)
+  - Typhoon/no-arc (3.4.5)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - JSONModel
+  - OCMock (~> 3.2)
+  - ReactiveCocoa (~> 4.0)
+  - Typhoon (~> 3.4)
+
+SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
+  ReactiveCocoa: 69be555be30674b07a86b60a91b855063841acc0
+  Result: caef80340451e1f07492fa1e89117f83613bce24
+  Typhoon: 200100687af3233ec5ed019064df3c9ffe350475
+
+COCOAPODS: 0.39.0
