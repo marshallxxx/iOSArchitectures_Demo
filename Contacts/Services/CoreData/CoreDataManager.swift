@@ -78,4 +78,15 @@ class CoreDataManager {
         return NSEntityDescription.insertNewObjectForEntityForName(entity_Contacts, inManagedObjectContext: managedObjectContext) as! Contact
     }
     
+    func getAllContacts() -> [Contact]? {
+        
+        let request = NSFetchRequest(entityName: entity_Contacts)
+        
+        do {
+            return try managedObjectContext.executeFetchRequest(request) as? [Contact]
+        } catch {
+            return nil
+        }
+    }
+    
 }

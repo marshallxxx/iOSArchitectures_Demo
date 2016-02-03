@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Contacts-->
         <scene sceneID="kX8-gQ-wuE">
             <objects>
                 <tableViewController id="HFz-6F-gTv" customClass="ContactListViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,9 @@
                             <outlet property="delegate" destination="HFz-6F-gTv" id="08r-15-7h8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="AD6-pQ-DR5"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="JxJ-Lh-ObJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yhV-dl-Pu6"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="OII-WG-Frb" kind="show" identifier="toDetails" id="JdL-hG-34j"/>
                     </connections>
@@ -70,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="765" y="375"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="nXr-74-Oyh">
             <objects>
-                <viewController id="OII-WG-Frb" sceneMemberID="viewController">
+                <viewController id="OII-WG-Frb" customClass="ContactDetailsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RFc-TR-9a9"/>
                         <viewControllerLayoutGuide type="bottom" id="zB0-qx-B8L"/>
@@ -82,31 +84,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-bU-toV">
-                                <rect key="frame" x="20" y="107" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noUser" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-bU-toV">
+                                <rect key="frame" x="20" y="107" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="C8y-eb-RLS"/>
+                                    <constraint firstAttribute="height" constant="100" id="C8y-eb-RLS"/>
                                     <constraint firstAttribute="width" secondItem="qVD-bU-toV" secondAttribute="height" multiplier="1:1" id="xfy-nq-MB7"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drR-5M-pqC">
-                                <rect key="frame" x="244" y="150" width="336" height="30"/>
+                                <rect key="frame" x="144" y="130" width="436" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-yp-HPh">
-                                <rect key="frame" x="244" y="217" width="336" height="30"/>
+                                <rect key="frame" x="144" y="197" width="436" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeK-wh-8nz">
-                                <rect key="frame" x="244" y="127" width="336" height="21"/>
+                                <rect key="frame" x="144" y="107" width="436" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1l-QS-gj4">
-                                <rect key="frame" x="244" y="194" width="336" height="21"/>
+                                <rect key="frame" x="144" y="174" width="436" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -123,13 +125,14 @@
                             <constraint firstItem="dK1-yp-HPh" firstAttribute="top" secondItem="H1l-QS-gj4" secondAttribute="bottom" constant="2" id="Mw9-TQ-p5x"/>
                             <constraint firstItem="qVD-bU-toV" firstAttribute="leading" secondItem="T84-cl-CEj" secondAttribute="leading" constant="20" id="NLg-pf-10K"/>
                             <constraint firstItem="H1l-QS-gj4" firstAttribute="trailing" secondItem="dK1-yp-HPh" secondAttribute="trailing" id="SQJ-uX-D44"/>
-                            <constraint firstItem="OeK-wh-8nz" firstAttribute="top" secondItem="qVD-bU-toV" secondAttribute="top" constant="20" id="Xpm-xg-jfR"/>
+                            <constraint firstItem="OeK-wh-8nz" firstAttribute="top" secondItem="qVD-bU-toV" secondAttribute="top" id="Xpm-xg-jfR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OeK-wh-8nz" secondAttribute="trailing" id="amV-8s-Wjn"/>
                             <constraint firstItem="OeK-wh-8nz" firstAttribute="trailing" secondItem="drR-5M-pqC" secondAttribute="trailing" id="ivV-AK-R66"/>
                             <constraint firstItem="H1l-QS-gj4" firstAttribute="leading" secondItem="dK1-yp-HPh" secondAttribute="leading" id="rif-qI-pL1"/>
                             <constraint firstItem="OeK-wh-8nz" firstAttribute="leading" secondItem="qVD-bU-toV" secondAttribute="trailing" constant="24" id="vFA-Iw-w61"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="liu-sb-kvO"/>
                     <connections>
                         <segue destination="Kxz-qw-Iw2" kind="show" identifier="toAvatars" id="CYf-Fy-yze"/>
                     </connections>
@@ -228,6 +231,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="noUser" width="170" height="170"/>
         <image name="test" width="170" height="170"/>
     </resources>
 </document>

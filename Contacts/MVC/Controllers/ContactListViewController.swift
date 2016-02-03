@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactListViewController: UITableViewController {
+    
+    override func viewDidLoad() {
 
+    }
+    
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -21,7 +26,14 @@ class ContactListViewController: UITableViewController {
         return cell
     }
     
-
+    // MARK: UITableViewDelegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
+    }
     
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
     
 }
