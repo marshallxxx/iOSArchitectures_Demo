@@ -11,6 +11,8 @@ import CoreData
 
 class ContactListViewController: UITableViewController {
     
+//    var dataManager:PersistentManagerProtocol = PersistentManager(persistentOption: )
+    
     var allContacts:[Contact] = []
     
     override func viewDidLoad() {

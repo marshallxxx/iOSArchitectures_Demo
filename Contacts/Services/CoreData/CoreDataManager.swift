@@ -65,7 +65,7 @@ class CoreDataManager {
         return managedObjectContext
     }()
     
-    // MARK: - Core Data Saving support
+    // MARK: - Core Data Methods
     
     func saveContext () {
         if managedObjectContext.hasChanges {

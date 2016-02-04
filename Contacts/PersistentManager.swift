@@ -18,6 +18,7 @@ protocol ModelConvertorProtocol {
 
 protocol PersistentManagerProtocol {
     typealias ReturnType
+    
     func getAllPersistentContacts() -> [ReturnType]?
     func addToPersistentContact(newObject:ReturnType) -> Bool
     func removePersistentObject(objectToRemove:ReturnType) -> Bool
