@@ -37,6 +37,12 @@ class ContactListViewController: UITableViewController {
         
         
     }
+
+    // MARK: IBActions
+    
+    @IBAction func showAddNewContact(sender: AnyObject) {
+        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
+    }
     
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

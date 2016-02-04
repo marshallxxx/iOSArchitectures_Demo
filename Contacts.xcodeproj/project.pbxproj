@@ -80,6 +80,10 @@
 		7313C4B8EFB22680DE9B7B58 /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C615B8E1A8AD1DF75B93EC /* Pods_MVVM.framework */; };
 		74C3B30DECF0644BA458F1C3 /* Pods_VIPERTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0FEA0A2A68E0F290924F2 /* Pods_VIPERTests.framework */; };
 		8DE9D0C61370D7F1098447CC /* Pods_MVCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F07482637755228AF9F17 /* Pods_MVCTests.framework */; };
+		A2A5B94B1C6357F7002A8E87 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B94A1C6357F7002A8E87 /* UIImage+Category.swift */; };
+		A2A5B94C1C6357F7002A8E87 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B94A1C6357F7002A8E87 /* UIImage+Category.swift */; };
+		A2A5B94D1C6357F7002A8E87 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B94A1C6357F7002A8E87 /* UIImage+Category.swift */; };
+		A2A5B94E1C6357F7002A8E87 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B94A1C6357F7002A8E87 /* UIImage+Category.swift */; };
 		ACBD1749C6DAF50D9DEA2D35 /* Pods_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4FA901296BB3C00CD416F /* Pods_VIPER.framework */; };
 		C7F391FB9A0B97D879E2E75D /* Pods_MVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF67EFA4859F0B14C66658D /* Pods_MVC.framework */; };
 /* End PBXBuildFile section */
@@ -174,6 +178,7 @@
 		841C10F45D5CF41857284EE7 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		9CEA9EF1DAA4246CFC2FA8FA /* Pods-MVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVC.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVC/Pods-MVC.release.xcconfig"; sourceTree = "<group>"; };
 		9FEF007B4D08CF57EA94661D /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
+		A2A5B94A1C6357F7002A8E87 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
 		BDF67EFA4859F0B14C66658D /* Pods_MVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA885990C6B891E895CAD926 /* Pods-VIPERTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERTests/Pods-VIPERTests.release.xcconfig"; sourceTree = "<group>"; };
 		D32C8B8DA285CE82DEDEF379 /* Pods-MVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVCTests/Pods-MVCTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -335,6 +340,7 @@
 		471377141C623A2F00C40C16 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A2A5B9491C635765002A8E87 /* Categories */,
 				4713783F1C62453E00C40C16 /* CoreData */,
 				4713783E1C62453300C40C16 /* Network */,
 			);
@@ -455,6 +461,14 @@
 				69C0FEA0A2A68E0F290924F2 /* Pods_VIPERTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2A5B9491C635765002A8E87 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A2A5B94A1C6357F7002A8E87 /* UIImage+Category.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		FF2FAF429EAB68C25CEF0986 /* Pods */ = {
@@ -1154,6 +1168,7 @@
 				479AE3111C634724005FE670 /* ServicesManager.swift in Sources */,
 				471378AD1C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
 				471378A11C624B6D00C40C16 /* Contacts.xcdatamodeld in Sources */,
+				A2A5B94B1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378CD1C625C7400C40C16 /* NetworkModels.swift in Sources */,
 				471378501C6245C700C40C16 /* RestAPICaller.swift in Sources */,
 				471378541C6245C700C40C16 /* NetworkService.swift in Sources */,
@@ -1180,6 +1195,7 @@
 				479AE3121C634724005FE670 /* ServicesManager.swift in Sources */,
 				471378AE1C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
 				471378A21C624B6D00C40C16 /* Contacts.xcdatamodeld in Sources */,
+				A2A5B94C1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378CE1C625C7400C40C16 /* NetworkModels.swift in Sources */,
 				471378511C6245C700C40C16 /* RestAPICaller.swift in Sources */,
 				471378551C6245C700C40C16 /* NetworkService.swift in Sources */,
@@ -1206,6 +1222,7 @@
 				479AE3131C634724005FE670 /* ServicesManager.swift in Sources */,
 				471378AF1C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
 				471378A31C624B6D00C40C16 /* Contacts.xcdatamodeld in Sources */,
+				A2A5B94D1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378CF1C625C7400C40C16 /* NetworkModels.swift in Sources */,
 				471378521C6245C700C40C16 /* RestAPICaller.swift in Sources */,
 				471378561C6245C700C40C16 /* NetworkService.swift in Sources */,
@@ -1238,6 +1255,7 @@
 				471378CB1C6258B200C40C16 /* AvatarCell.swift in Sources */,
 				471378A91C624B8000C40C16 /* CoreDataManager.swift in Sources */,
 				4713780A1C62428E00C40C16 /* AppDelegate.swift in Sources */,
+				A2A5B94E1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378B41C624C6C00C40C16 /* Contact.swift in Sources */,
 				471378D51C6261AA00C40C16 /* ContactDetailsViewController.swift in Sources */,
 				471378B91C624D8B00C40C16 /* Constants.swift in Sources */,
