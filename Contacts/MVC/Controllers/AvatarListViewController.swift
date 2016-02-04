@@ -18,10 +18,8 @@ class AvatarListViewController: UICollectionViewController {
 
         let leftItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "goBack:")
         navigationItem.leftBarButtonItem = leftItem
-        
-        let service = NetworkService(rest: RestAPICaller())
-        
-        service.getAvatarList { (error, avatars) -> () in
+
+        ExternalConnector.sharedManager().networkManager.getAvatarList {  (error, avatars) -> () in
             
             if let avatars = avatars {
                 self.avatarList = avatars
@@ -40,7 +38,8 @@ class AvatarListViewController: UICollectionViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.Segue_ToEditContact {
-
+            let VC = segue.destinationViewController as? ContactDetailsViewController
+            VC?.contact?.avatarURL = selectedItem?.url
             
         }
     }

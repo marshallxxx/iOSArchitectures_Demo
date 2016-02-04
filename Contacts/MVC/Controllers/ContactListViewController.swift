@@ -16,8 +16,6 @@ class ContactListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
         
         // Mock
         
@@ -38,6 +36,12 @@ class ContactListViewController: UITableViewController {
         
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
+        tableView.reloadData()
+    }
+    
     // MARK: IBActions
     
     @IBAction func showAddNewContact(sender: AnyObject) {
