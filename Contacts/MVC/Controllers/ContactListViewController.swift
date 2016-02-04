@@ -11,6 +11,8 @@ import CoreData
 
 class ContactListViewController: UITableViewController {
     
+    var allContacts:[Contact] = []
+    
     override func viewDidLoad() {
 
     }

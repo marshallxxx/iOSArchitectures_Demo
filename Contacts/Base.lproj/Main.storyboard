@@ -141,7 +141,7 @@
             </objects>
             <point key="canvasLocation" x="1477" y="375"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Choose avatar-->
         <scene sceneID="qFJ-9X-Vsy">
             <objects>
                 <collectionViewController id="Kxz-qw-Iw2" sceneMemberID="viewController">
@@ -208,6 +208,7 @@
                             <outlet property="delegate" destination="Kxz-qw-Iw2" id="8Qe-nF-Ugd"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Choose avatar" id="SRO-1P-3qv"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uM8-lP-vpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

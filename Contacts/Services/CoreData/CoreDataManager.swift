@@ -9,6 +9,15 @@
 import Foundation
 import CoreData
 
+protocol PersistenStoreProtocol {
+    func saveContext ()
+    func removeContactWithPhoneNumber(phoneNumber: String) -> Bool
+    func newContact() -> Contact
+    func getAllContacts() -> [Contact]?
+    func getContactWithPhoneNumber(phoneNumber:String) -> Contact?
+    func checkIfPhoneNumberIsFree(phoneNumber:String) -> Bool
+}
+
 class CoreDataManager {
     
     // MARK: CoreData Entities
@@ -70,8 +79,13 @@ class CoreDataManager {
         }
     }
     
-    func removeContact(contactToRemore: Contact) {
-        managedObjectContext.deleteObject(contactToRemore)
+    func removeContactWithPhoneNumber(phoneNumber: String) -> Bool {
+        if let contact = getContactWithPhoneNumber(phoneNumber) {
+            managedObjectContext.deleteObject(contact)
+            return true
+        } else {
+            return false
+        }
     }
     
     func newContact() -> Contact {
@@ -87,6 +101,26 @@ class CoreDataManager {
         } catch {
             return nil
         }
+    }
+    
+    func getContactWithPhoneNumber(phoneNumber:String) -> Contact? {
+        let request = NSFetchRequest(entityName: entity_Contacts)
+        
+        request.predicate = NSPredicate(format: "phoneNumber = %@", phoneNumber)
+        
+        var allContacts:[Contact]?
+        
+        do {
+            allContacts = try managedObjectContext.executeFetchRequest(request) as? [Contact]
+        } catch {
+            return nil
+        }
+        
+        return allContacts?.count > 0 ? allContacts![0] : nil
+    }
+    
+    func checkIfPhoneNumberIsFree(phoneNumber:String) -> Bool {
+        return getContactWithPhoneNumber(phoneNumber) == nil
     }
     
 }
