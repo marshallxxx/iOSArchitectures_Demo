@@ -56,7 +56,12 @@ class ContactListViewController: UITableViewController {
         
         cell.nicknameLabel?.text = contact.nickname
         cell.phoneNumberLabel?.text = contact.phoneNumber
-//        cell.avatarIV?.image = 
+        
+        if let imageUrl = contact.avatarURL {
+            cell.avatarIV?.imageFromUrl(imageUrl)
+        } else {
+            cell.avatarIV?.image = UIImage(named:"noUser")
+        }
         
         return cell
     }

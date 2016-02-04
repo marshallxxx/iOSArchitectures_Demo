@@ -20,23 +20,23 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="251" tableViewCell="uQt-11-XNK" id="ubE-WB-fdY">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBD-gL-9XD">
-                                            <rect key="frame" x="15" y="0.0" width="62" height="63"/>
+                                            <rect key="frame" x="15" y="6" width="54" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="CBD-gL-9XD" secondAttribute="height" multiplier="51:52" id="zmb-65-c6B"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDp-ts-s0O">
-                                            <rect key="frame" x="85" y="8" width="474" height="21"/>
+                                            <rect key="frame" x="77" y="14" width="482" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-ZX-4Jw">
-                                            <rect key="frame" x="85" y="32" width="474" height="17"/>
+                                            <rect key="frame" x="77" y="38" width="482" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -44,9 +44,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kDp-ts-s0O" firstAttribute="width" secondItem="Eeh-ZX-4Jw" secondAttribute="width" id="1cd-5e-1J4"/>
-                                        <constraint firstItem="CBD-gL-9XD" firstAttribute="top" secondItem="ubE-WB-fdY" secondAttribute="top" id="JjY-N6-9cp"/>
+                                        <constraint firstItem="CBD-gL-9XD" firstAttribute="top" secondItem="ubE-WB-fdY" secondAttribute="top" constant="6" id="JjY-N6-9cp"/>
                                         <constraint firstItem="Eeh-ZX-4Jw" firstAttribute="top" secondItem="kDp-ts-s0O" secondAttribute="bottom" constant="3" id="Qsg-MG-AoK"/>
-                                        <constraint firstAttribute="bottom" secondItem="CBD-gL-9XD" secondAttribute="bottom" constant="4" id="RIo-ry-XBS"/>
+                                        <constraint firstAttribute="bottom" secondItem="CBD-gL-9XD" secondAttribute="bottom" constant="6" id="RIo-ry-XBS"/>
                                         <constraint firstItem="kDp-ts-s0O" firstAttribute="top" secondItem="CBD-gL-9XD" secondAttribute="top" constant="8" id="Zpo-Op-4c8"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kDp-ts-s0O" secondAttribute="trailing" id="azn-lO-k1l"/>
                                         <constraint firstItem="kDp-ts-s0O" firstAttribute="leading" secondItem="CBD-gL-9XD" secondAttribute="trailing" constant="8" id="bwo-LC-bL1"/>
@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-yp-HPh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-yp-HPh">
                                 <rect key="frame" x="144" y="197" width="436" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
