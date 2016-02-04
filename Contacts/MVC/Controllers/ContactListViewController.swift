@@ -13,8 +13,10 @@ class ContactListViewController: UITableViewController {
     
     var allContacts:[ContactMVC] = ExternalConnector.sharedServicesManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
     
+    var selectedContact:ContactMVC?
+    
     override func viewDidLoad() {
-
+        super.viewDidLoad()
     }
     
     // MARK: UITableViewDataSource
@@ -30,12 +32,25 @@ class ContactListViewController: UITableViewController {
     
     // MARK: UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedContact = allContacts[indexPath.row]
         performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
     }
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        switch (segue.identifier!) {
+        case Constants.Segue_ToDetails:
+            if let destination = segue.destinationViewController as? ContactDetailsViewController {
+                destination.contact = selectedContact
+            }
+        case Constants.Segue_ToNewEntry:
+            if let destination = segue.destinationViewController as? ContactDetailsViewController {
+                destination.contact = nil
+            }
+            break
+        default:
+            assertionFailure("There shoudn't be another segues")
+        }
     }
     
 }

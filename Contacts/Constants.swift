@@ -14,6 +14,7 @@ class Constants {
     
     static let Segue_ToDetails = "toDetails"
     static let Segue_ToAvatars = "toAvatars"
+    static let Segue_ToNewEntry = "toNewEntry"
     
     // MARK: Cells
     

@@ -10,6 +10,6 @@ import UIKit
 
 class ContactDetailsViewController: UIViewController {
 
-    
+    var contact:ContactMVC?
     
 }

@@ -62,7 +62,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="JxJ-Lh-ObJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yhV-dl-Pu6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yhV-dl-Pu6">
+                            <connections>
+                                <segue destination="OII-WG-Frb" kind="show" identifier="toNewEntry" id="X7N-sE-U7O"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="OII-WG-Frb" kind="show" identifier="toDetails" id="JdL-hG-34j"/>
@@ -139,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAe-hY-FhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="375"/>
+            <point key="canvasLocation" x="1485" y="473"/>
         </scene>
         <!--Choose avatar-->
         <scene sceneID="qFJ-9X-Vsy">
@@ -234,4 +238,7 @@
     <resources>
         <image name="noUser" width="170" height="170"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="X7N-sE-U7O"/>
+    </inferredMetricsTieBreakers>
 </document>
