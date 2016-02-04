@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct ContactMVC {
+class ContactMVC: NSObject, ModelConvertorProtocol {
     var phoneNumber: String?
     var avatarURL: String?
     var nickname: String?
+    
+    required override init() {
+        super.init()
+    }
 }

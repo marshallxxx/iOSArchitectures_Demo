@@ -18,11 +18,11 @@ protocol PersistenStoreProtocol {
     func checkIfPhoneNumberIsFree(phoneNumber:String) -> Bool
 }
 
-class CoreDataManager {
+class CoreDataManager: PersistenStoreProtocol {
     
     // MARK: CoreData Entities
     
-    let entity_Contacts = "Contacts"
+    let entity_Contacts = "Contact"
     
     
     // MARK: - Core Data stack

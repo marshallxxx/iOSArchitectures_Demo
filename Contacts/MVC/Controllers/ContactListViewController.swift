@@ -11,9 +11,7 @@ import CoreData
 
 class ContactListViewController: UITableViewController {
     
-//    var dataManager:PersistentManagerProtocol = PersistentManager(persistentOption: )
-    
-    var allContacts:[Contact] = []
+    var allContacts:[ContactMVC] = ExternalConnector.sharedServicesManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
     
     override func viewDidLoad() {
 
@@ -21,7 +19,7 @@ class ContactListViewController: UITableViewController {
     
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return allContacts.count
     }
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

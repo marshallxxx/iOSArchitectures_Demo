@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="CBD-gL-9XD">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBD-gL-9XD">
                                             <rect key="frame" x="15" y="0.0" width="62" height="63"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="CBD-gL-9XD" secondAttribute="height" multiplier="51:52" id="zmb-65-c6B"/>
@@ -233,6 +233,5 @@
     </scenes>
     <resources>
         <image name="noUser" width="170" height="170"/>
-        <image name="test" width="170" height="170"/>
     </resources>
 </document>
