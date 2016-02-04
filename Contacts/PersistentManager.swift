@@ -21,8 +21,9 @@ protocol PersistentManagerProtocol {
     typealias ReturnType
     
     func getAllPersistentContacts() -> [ReturnType]?
-    func addToPersistentContact(newObject:ReturnType)
+    func addToPersistentContact(newObject:ReturnType) -> Bool
     func removePersistentObject(objectToRemove:ReturnType) -> Bool
+    func updateContact(contact:ReturnType) -> Bool
 }
 
 class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
@@ -47,6 +48,7 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
                 t.nickname = contact.nickname
                 t.phoneNumber = contact.phoneNumber
                 t.avatarURL = contact.avatarURL
+                t.contactID = contact.contactID
                 
                 resultContacts.append(t)
             }
@@ -55,16 +57,37 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         return resultContacts
     }
     
-    func addToPersistentContact(newObject:ReturnType) {
+    func addToPersistentContact(newObject:ReturnType) -> Bool {
+        let matchContacts = persistentManager.getContacts("phoneNumber", contactValue: newObject.phoneNumber ?? "-1")
         
-        let contact = persistentManager.newContact()
-        
-        contact.phoneNumber = newObject.phoneNumber
-        contact.nickname = newObject.nickname
-        contact.avatarURL = newObject.avatarURL
-        
-        persistentManager.saveContext()
-
+        if let contacts = matchContacts where
+            contacts.count == 0 {
+            let contact = persistentManager.newContact()
+            
+            contact.phoneNumber = newObject.phoneNumber
+            contact.nickname = newObject.nickname
+            contact.avatarURL = newObject.avatarURL
+            
+            persistentManager.saveContext()
+            
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func updateContact(contact:ReturnType) -> Bool {
+        if let persistentContact = persistentManager.getContactWithID(contact.contactID) {
+            
+            persistentContact.nickname = contact.nickname
+            persistentContact.phoneNumber = contact.phoneNumber
+            persistentContact.avatarURL = contact.avatarURL
+            
+            return persistentManager.updateContact(persistentContact)
+            
+        } else {
+            return false
+        }
     }
     
     func removePersistentObject(objectToRemove:ReturnType) -> Bool {

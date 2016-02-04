@@ -15,8 +15,7 @@ class ContactDetailsViewController: UIViewController {
     @IBOutlet weak var contactPhone: UITextField?
 
     var contact:ContactMVC?
-    var isEditable: Bool?
-
+    var isEditable: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,10 @@ class ContactDetailsViewController: UIViewController {
             isEditable = true
             contactName?.text = contact?.nickname
             contactPhone?.text = contact?.phoneNumber
-            contactAvatar?.imageFromUrl((contact?.avatarURL)!)
+            
+            if let avatarURL = contact?.avatarURL {
+                contactAvatar?.imageFromUrl(avatarURL)
+            }
             
         } else {
             contact = ContactMVC()
@@ -44,7 +46,13 @@ class ContactDetailsViewController: UIViewController {
             contact!.nickname = name
             contact!.phoneNumber = phone
             
-            let result = ExternalConnector.sharedManager().persistentManager.addToPersistentContact(contact!)
+            var result:Bool
+            
+            if isEditable {
+                result = ExternalConnector.sharedManager().persistentManager.updateContact(contact!)
+            } else {
+                result = ExternalConnector.sharedManager().persistentManager.addToPersistentContact(contact!)
+            }
             
             if result {
                 navigationController?.popViewControllerAnimated(true)
