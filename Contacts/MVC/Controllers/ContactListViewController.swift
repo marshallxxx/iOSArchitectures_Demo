@@ -15,25 +15,7 @@ class ContactListViewController: UITableViewController {
     var selectedContact:ContactMVC?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Mock
-        
-//        let phones = ["098765434", "1089747", "19824701", "09174014"]
-//        let names = ["James", "Franko", "Luis", "Jully"]
-//        
-//        for (index, name) in names.enumerate() {
-//            let contact = ContactMVC()
-//            
-//            contact.phoneNumber = phones[index]
-//            contact.nickname = name
-//            contact.avatarURL = nil
-//            
-//            ExternalConnector.sharedManager().persistentManager.addToPersistentContact(contact)
-//        }
-        
-        
-        
+        super.viewDidLoad()        
     }
 
     override func viewWillAppear(animated: Bool) {

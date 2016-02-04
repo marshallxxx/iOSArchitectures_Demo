@@ -25,9 +25,7 @@ class AvatarListViewController: UICollectionViewController {
                 self.avatarList = avatars
                 self.collectionView?.reloadData()
             }
-            
         }
-
     }
     
     // MARK: IBActions

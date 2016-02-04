@@ -10,13 +10,13 @@
         <!--Contacts-->
         <scene sceneID="kX8-gQ-wuE">
             <objects>
-                <tableViewController id="HFz-6F-gTv" customClass="ContactListViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HFz-6F-gTv" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="nTO-d5-b7T">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="68" id="uQt-11-XNK" customClass="ContactCell" customModule="MVC" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="68" id="uQt-11-XNK">
                                 <rect key="frame" x="0.0" y="92" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="251" tableViewCell="uQt-11-XNK" id="ubE-WB-fdY">
@@ -54,11 +54,6 @@
                                         <constraint firstItem="CBD-gL-9XD" firstAttribute="leading" secondItem="ubE-WB-fdY" secondAttribute="leadingMargin" constant="7" id="qpV-aC-aZu"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="avatarIV" destination="CBD-gL-9XD" id="94O-XR-5fG"/>
-                                    <outlet property="nicknameLabel" destination="kDp-ts-s0O" id="QwO-PP-mDi"/>
-                                    <outlet property="phoneNumberLabel" destination="Eeh-ZX-4Jw" id="qOk-lC-pm0"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -84,7 +79,7 @@
         <!--Title-->
         <scene sceneID="nXr-74-Oyh">
             <objects>
-                <viewController id="OII-WG-Frb" customClass="ContactDetailsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OII-WG-Frb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RFc-TR-9a9"/>
                         <viewControllerLayoutGuide type="bottom" id="zB0-qx-B8L"/>
@@ -146,32 +141,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="liu-sb-kvO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFB-hl-Lnc">
-                            <connections>
-                                <action selector="saveNewContact:" destination="OII-WG-Frb" id="T3q-bg-s7O"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFB-hl-Lnc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="contactAvatar" destination="qVD-bU-toV" id="3gl-HE-vhN"/>
-                        <outlet property="contactName" destination="drR-5M-pqC" id="fed-VC-RKG"/>
-                        <outlet property="contactPhone" destination="dK1-yp-HPh" id="9w1-ir-r3f"/>
                         <segue destination="Kxz-qw-Iw2" kind="show" identifier="toAvatars" id="CYf-Fy-yze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAe-hY-FhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="eUl-DJ-6ct">
-                    <connections>
-                        <action selector="pickContactAvatart:" destination="OII-WG-Frb" id="3OI-dM-pMO"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eUl-DJ-6ct"/>
             </objects>
             <point key="canvasLocation" x="1485" y="473"/>
         </scene>
         <!--Choose avatar-->
         <scene sceneID="qFJ-9X-Vsy">
             <objects>
-                <collectionViewController id="Kxz-qw-Iw2" customClass="AvatarListViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Kxz-qw-Iw2" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DBI-uT-gdB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +167,7 @@
                             <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AvatarCell" id="1Qf-fG-GaK" customClass="AvatarCell" customModule="MVC" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AvatarCell" id="1Qf-fG-GaK">
                                 <rect key="frame" x="5" y="69" width="170" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -230,10 +214,6 @@
                                     <constraint firstItem="o0J-Zn-oLO" firstAttribute="top" secondItem="1Qf-fG-GaK" secondAttribute="top" id="aBA-JV-rru"/>
                                     <constraint firstAttribute="bottom" secondItem="o0J-Zn-oLO" secondAttribute="bottom" id="cfT-FU-FRR"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="avatarImage" destination="o0J-Zn-oLO" id="yEh-MQ-I7N"/>
-                                    <outlet property="avatarTitle" destination="5KG-qn-xyO" id="bfY-jG-MEi"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
