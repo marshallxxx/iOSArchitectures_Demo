@@ -18,6 +18,12 @@ class ContactListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    // MARK: IBActions
+    
+    @IBAction func showAddNewContact(sender: AnyObject) {
+        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
+    }
     
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

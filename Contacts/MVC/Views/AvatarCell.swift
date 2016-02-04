@@ -10,4 +10,6 @@ import UIKit
 
 class AvatarCell: UICollectionViewCell {
 
+    @IBOutlet weak var avatarImage: UIImageView?
+    @IBOutlet weak var avatarTitle: UILabel?
 }
