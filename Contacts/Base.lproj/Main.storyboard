@@ -54,6 +54,11 @@
                                         <constraint firstItem="CBD-gL-9XD" firstAttribute="leading" secondItem="ubE-WB-fdY" secondAttribute="leadingMargin" constant="7" id="qpV-aC-aZu"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarIV" destination="CBD-gL-9XD" id="94O-XR-5fG"/>
+                                    <outlet property="nicknameLabel" destination="kDp-ts-s0O" id="QwO-PP-mDi"/>
+                                    <outlet property="phoneNumberLabel" destination="Eeh-ZX-4Jw" id="qOk-lC-pm0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

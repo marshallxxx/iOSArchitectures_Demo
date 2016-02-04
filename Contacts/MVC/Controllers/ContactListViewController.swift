@@ -11,12 +11,31 @@ import CoreData
 
 class ContactListViewController: UITableViewController {
     
-    var allContacts:[ContactMVC] = ExternalConnector.sharedServicesManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
-    
+    var allContacts:[ContactMVC] = []
     var selectedContact:ContactMVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        allContacts = ExternalConnector.sharedServicesManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
+        
+        // Mock
+        
+//        let phones = ["098765434", "1089747", "19824701", "09174014"]
+//        let names = ["James", "Franko", "Luis", "Jully"]
+//        
+//        for (index, name) in names.enumerate() {
+//            let contact = ContactMVC()
+//            
+//            contact.phoneNumber = phones[index]
+//            contact.nickname = name
+//            contact.avatarURL = nil
+//            
+//            ExternalConnector.sharedServicesManager().persistentManager.addToPersistentContact(contact)
+//        }
+        
+        
+        
     }
     
     // MARK: UITableViewDataSource
@@ -26,6 +45,12 @@ class ContactListViewController: UITableViewController {
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.Cell_ContactCell) as! ContactCell
+        
+        let contact = allContacts[indexPath.row]
+        
+        cell.nicknameLabel?.text = contact.nickname
+        cell.phoneNumberLabel?.text = contact.phoneNumber
+//        cell.avatarIV?.image = 
         
         return cell
     }

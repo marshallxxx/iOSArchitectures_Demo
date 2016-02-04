@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ModelConvertorProtocol {
+@objc protocol ModelConvertorProtocol {
     init()
     
     var phoneNumber: String? { get set }
