@@ -41,7 +41,7 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         if let allContacts = persistentManager.getAllContacts() {
             
             for contact in allContacts {
-                var t = T()
+                let t = T()
                 
                 t.nickname = contact.nickname
                 t.phoneNumber = contact.phoneNumber
