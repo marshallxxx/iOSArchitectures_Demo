@@ -319,6 +319,9 @@
 		471377111C623A0000C40C16 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				479AE31C1C63755C005FE670 /* Models */,
+				479AE31B1C63754E005FE670 /* Presenters */,
+				479AE31A1C63753E005FE670 /* Views */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -326,6 +329,9 @@
 		471377121C623A0C00C40C16 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				479AE3201C6375B6005FE670 /* ViewModels */,
+				479AE31F1C63759A005FE670 /* Views */,
+				479AE31D1C637570005FE670 /* Models */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -446,6 +452,48 @@
 				479AE3091C633900005FE670 /* ContactMVC.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		479AE31A1C63753E005FE670 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		479AE31B1C63754E005FE670 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		479AE31C1C63755C005FE670 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		479AE31D1C637570005FE670 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		479AE31F1C63759A005FE670 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		479AE3201C6375B6005FE670 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5966CED9B6864161B6F6F050 /* Frameworks */ = {

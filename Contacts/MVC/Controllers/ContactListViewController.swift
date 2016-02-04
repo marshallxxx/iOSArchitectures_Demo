@@ -17,7 +17,7 @@ class ContactListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        allContacts = ExternalConnector.sharedServicesManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
+        allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
         
         // Mock
         
@@ -31,7 +31,7 @@ class ContactListViewController: UITableViewController {
 //            contact.nickname = name
 //            contact.avatarURL = nil
 //            
-//            ExternalConnector.sharedServicesManager().persistentManager.addToPersistentContact(contact)
+//            ExternalConnector.sharedManager().persistentManager.addToPersistentContact(contact)
 //        }
         
         

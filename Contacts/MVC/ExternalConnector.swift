@@ -9,7 +9,7 @@
 import Foundation
 
 class ExternalConnector {
-    static func sharedServicesManager() -> ServicesManager<ContactMVC> {
+    static func sharedManager() -> ServicesManager<ContactMVC> {
         struct Static {
             static var onceToken: dispatch_once_t = 0
             static var instance: ServicesManager<ContactMVC>? = nil
