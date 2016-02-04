@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AvatarListViewController: UIViewController {
+class AvatarListViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

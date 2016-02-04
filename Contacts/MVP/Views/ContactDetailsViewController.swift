@@ -10,4 +10,8 @@ import UIKit
 
 class ContactDetailsViewController: UIViewController {
 
+    @IBOutlet weak var contactAvatar: UIImageView?
+    @IBOutlet weak var contactName: UITextField?
+    @IBOutlet weak var contactPhone: UITextField?
+    
 }
