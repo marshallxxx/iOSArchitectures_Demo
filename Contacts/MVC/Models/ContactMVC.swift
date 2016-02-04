@@ -9,11 +9,14 @@
 import Foundation
 
 class ContactMVC: NSObject, ModelConvertorProtocol {
+    
+    var contactID: Int
     var phoneNumber: String?
     var avatarURL: String?
     var nickname: String?
     
     required override init() {
+        contactID = -1
         super.init()
     }
 }

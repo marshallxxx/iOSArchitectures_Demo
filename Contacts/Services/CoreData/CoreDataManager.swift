@@ -11,11 +11,11 @@ import CoreData
 
 protocol PersistenStoreProtocol {
     func saveContext ()
-    func removeContactWithPhoneNumber(phoneNumber: String) -> Bool
     func newContact() -> Contact
+    func removeContactWithID(contactID: Int) -> Bool
     func getAllContacts() -> [Contact]?
-    func getContactWithPhoneNumber(phoneNumber:String) -> Contact?
-    func checkIfPhoneNumberIsFree(phoneNumber:String) -> Bool
+    func getContactWithID(contactID:Int) -> Contact?
+    func updateContact(contact:Contact) -> Bool
 }
 
 class CoreDataManager: PersistenStoreProtocol {
@@ -79,8 +79,8 @@ class CoreDataManager: PersistenStoreProtocol {
         }
     }
     
-    func removeContactWithPhoneNumber(phoneNumber: String) -> Bool {
-        if let contact = getContactWithPhoneNumber(phoneNumber) {
+    func removeContactWithID(contactID: Int) -> Bool {
+        if let contact = getContactWithID(contactID) {
             managedObjectContext.deleteObject(contact)
             return true
         } else {
@@ -89,7 +89,26 @@ class CoreDataManager: PersistenStoreProtocol {
     }
     
     func newContact() -> Contact {
-        return NSEntityDescription.insertNewObjectForEntityForName(entity_Contacts, inManagedObjectContext: managedObjectContext) as! Contact
+        
+        let contact = NSEntityDescription.insertNewObjectForEntityForName(entity_Contacts, inManagedObjectContext: managedObjectContext) as! Contact
+        
+        contact.contactID = newContactId()
+        
+        return contact
+    }
+    
+    private func newContactId() -> Int {
+        let request = NSFetchRequest(entityName: entity_Contacts)
+        
+        request.predicate = NSPredicate(format: "contactID==max(contactID)")
+        request.sortDescriptors = []
+        
+        do {
+            let response = try managedObjectContext.executeFetchRequest(request) as! [Contact]
+            return response[0].contactID + 1
+        } catch {
+            return -1
+        }
     }
     
     func getAllContacts() -> [Contact]? {
@@ -103,10 +122,10 @@ class CoreDataManager: PersistenStoreProtocol {
         }
     }
     
-    func getContactWithPhoneNumber(phoneNumber:String) -> Contact? {
+    func getContactWithID(contactID:Int) -> Contact? {
         let request = NSFetchRequest(entityName: entity_Contacts)
         
-        request.predicate = NSPredicate(format: "phoneNumber = %@", phoneNumber)
+        request.predicate = NSPredicate(format: "contactID = %@", contactID)
         
         var allContacts:[Contact]?
         
@@ -119,8 +138,23 @@ class CoreDataManager: PersistenStoreProtocol {
         return allContacts?.count > 0 ? allContacts![0] : nil
     }
     
-    func checkIfPhoneNumberIsFree(phoneNumber:String) -> Bool {
-        return getContactWithPhoneNumber(phoneNumber) == nil
+    func checkIfPhoneNumberIsFree(contactID:Int) -> Bool {
+        return getContactWithID(contactID) == nil
+    }
+    
+    func updateContact(contact:Contact) -> Bool {
+        if let contactToUpdate = getContactWithID(contact.contactID) {
+            
+            contactToUpdate.nickname = contact.nickname;
+            contactToUpdate.phoneNumber = contact.phoneNumber
+            contactToUpdate.avatarURL = contact.avatarURL
+            
+            saveContext()
+            
+            return true
+        } else {
+            return false
+        }
     }
     
 }

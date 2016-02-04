@@ -11,6 +11,7 @@ import Foundation
 @objc protocol ModelConvertorProtocol {
     init()
     
+    var contactID: Int { get set }
     var phoneNumber: String? { get set }
     var avatarURL: String? { get set }
     var nickname: String? { get set }
@@ -20,7 +21,7 @@ protocol PersistentManagerProtocol {
     typealias ReturnType
     
     func getAllPersistentContacts() -> [ReturnType]?
-    func addToPersistentContact(newObject:ReturnType) -> Bool
+    func addToPersistentContact(newObject:ReturnType)
     func removePersistentObject(objectToRemove:ReturnType) -> Bool
 }
 
@@ -54,30 +55,20 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         return resultContacts
     }
     
-    func addToPersistentContact(newObject:ReturnType) -> Bool {
+    func addToPersistentContact(newObject:ReturnType) {
         
-        if let phoneNumber = newObject.phoneNumber where
-            persistentManager.checkIfPhoneNumberIsFree(phoneNumber) {
-                let contact = persistentManager.newContact()
-                
-                contact.phoneNumber = phoneNumber
-                contact.nickname = newObject.nickname
-                contact.avatarURL = newObject.avatarURL
-                
-                persistentManager.saveContext()
-                
-                return true
-        } else {
-            return false
-        }
+        let contact = persistentManager.newContact()
+        
+        contact.phoneNumber = newObject.phoneNumber
+        contact.nickname = newObject.nickname
+        contact.avatarURL = newObject.avatarURL
+        
+        persistentManager.saveContext()
+
     }
     
     func removePersistentObject(objectToRemove:ReturnType) -> Bool {
-        if let phoneNumber = objectToRemove.phoneNumber {
-            return persistentManager.removeContactWithPhoneNumber(phoneNumber)
-        } else {
-            return false
-        }
+        return persistentManager.removeContactWithID(objectToRemove.contactID )
     }
     
 }
