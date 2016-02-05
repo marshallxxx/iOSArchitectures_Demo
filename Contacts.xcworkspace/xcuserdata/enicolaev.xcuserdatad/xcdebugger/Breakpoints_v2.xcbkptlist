@@ -19,5 +19,53 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Contacts/MVP/Presenters/ContactDetailsPresenter.swift"
+            timestampString = "476368134.849194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "setupAvatarURL(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVP.ContactDetailsPresenter.setupAvatarURL (MVP.ContactDetailsPresenter)(Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MVP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enicolaev/Documents/Contacts/Contacts/MVP/Presenters/ContactDetailsPresenter.swift"
+                  timestampString = "476296391.990167"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "protocol witness for MVP.ContactDetailsPresenterProtocol.setupAvatarURL &lt;A where A: MVP.ContactDetailsPresenterProtocol&gt; (A)(Swift.Optional&lt;Swift.String&gt;) -&gt; () in conformance MVP.ContactDetailsPresenter : MVP.ContactDetailsPresenterProtocol in MVP"
+                  moduleName = "MVP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enicolaev/Documents/Contacts/Contacts/MVP/Presenters/ContactDetailsPresenter.swift"
+                  timestampString = "476296391.990414"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

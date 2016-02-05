@@ -17,6 +17,7 @@ class ContactDetailsViewController: UIViewController {
     var contact:ContactMVC?
     var isEditable: Bool = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

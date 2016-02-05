@@ -14,10 +14,6 @@ class ContactListViewController: UITableViewController {
     var allContacts:[ContactMVC] = []
     var selectedContact:ContactMVC?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()        
-    }
-
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]

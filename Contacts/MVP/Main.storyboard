@@ -56,6 +56,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarIV" destination="CBD-gL-9XD" id="aTH-BU-Zfx"/>
+                                    <outlet property="nicknameLabel" destination="kDp-ts-s0O" id="LeL-1i-tEg"/>
+                                    <outlet property="phoneNumberLabel" destination="Eeh-ZX-4Jw" id="6Od-ZA-zhM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -144,20 +146,33 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="liu-sb-kvO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFB-hl-Lnc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFB-hl-Lnc">
+                            <connections>
+                                <action selector="saveContactPressed:" destination="OII-WG-Frb" id="0bs-2g-OL9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactAvatar" destination="qVD-bU-toV" id="uCl-hq-PsB"/>
+                        <outlet property="contactName" destination="drR-5M-pqC" id="Tc5-yq-be1"/>
+                        <outlet property="contactPhone" destination="dK1-yp-HPh" id="Dfk-Vm-Ted"/>
                         <segue destination="Kxz-qw-Iw2" kind="show" identifier="toAvatars" id="CYf-Fy-yze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAe-hY-FhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="eUl-DJ-6ct"/>
+                <tapGestureRecognizer id="eUl-DJ-6ct">
+                    <connections>
+                        <action selector="pickContactAvatart:" destination="OII-WG-Frb" id="7fe-ZI-dBH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1485" y="473"/>
         </scene>
         <!--Choose avatar-->
         <scene sceneID="qFJ-9X-Vsy">
             <objects>
+                <exit id="L0d-gT-ZTM" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uM8-lP-vpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="Kxz-qw-Iw2" customClass="AvatarListViewController" customModule="MVP" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DBI-uT-gdB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -230,11 +245,9 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Choose avatar" id="SRO-1P-3qv"/>
                     <connections>
-                        <segue destination="L0d-gT-ZTM" kind="unwind" identifier="toEditContact" unwindAction="unwindForSegue:" id="Y2d-YY-jYd"/>
+                        <segue destination="L0d-gT-ZTM" kind="unwind" identifier="toEditContact" unwindAction="unwindForSegue:" id="ir3-xp-Q2r"/>
                     </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uM8-lP-vpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="L0d-gT-ZTM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2185" y="375"/>
         </scene>
