@@ -31,6 +31,7 @@ end
 target 'MVVM' do
 default_pods
 pod 'ReactiveCocoa', '~> 4.0'
+pod 'Swinject', '~> 1.0'
 end
 
 target 'MVVMTests' do

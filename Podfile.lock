@@ -28,6 +28,7 @@ PODS:
     - ReactiveCocoa/Core
     - Result (~> 1.0.1)
   - Result (1.0.1)
+  - Swinject (1.0.0)
   - Typhoon (3.4.5):
     - Typhoon/no-arc (= 3.4.5)
   - Typhoon/no-arc (3.4.5)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - JSONModel
   - OCMock (~> 3.2)
   - ReactiveCocoa (~> 4.0)
+  - Swinject (~> 1.0)
   - Typhoon (~> 3.4)
 
 SPEC CHECKSUMS:
@@ -45,6 +47,7 @@ SPEC CHECKSUMS:
   OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
   ReactiveCocoa: 69be555be30674b07a86b60a91b855063841acc0
   Result: caef80340451e1f07492fa1e89117f83613bce24
+  Swinject: f1ec058cc1809929fd5b962c3a8a8277827389b6
   Typhoon: 200100687af3233ec5ed019064df3c9ffe350475
 
 COCOAPODS: 0.39.0

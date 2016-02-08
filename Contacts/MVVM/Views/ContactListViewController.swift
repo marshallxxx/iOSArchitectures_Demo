@@ -2,87 +2,71 @@
 //  ContactListViewController.swift
 //  Contacts
 //
-//  Created by Evghenii Nicolaev on 2/4/16.
+//  Created by Evghenii Nicolaev on 2/3/16.
 //  Copyright © 2016 Endava. All rights reserved.
 //
 
 import UIKit
+import CoreData
+import ReactiveCocoa
+import Swinject
 
-protocol ContactListViewProtocol: class {
-    func updateCell(nickname:String?, phoneNumber:String?, avatarURL:String?)
-}
-
-class ContactListViewController: UITableViewController, ContactListViewProtocol {
+class ContactListViewController: UITableViewController {
     
-    var presenter:ContactListPresenterProtocol?
-    private var currentCell: ContactCell?
-    var selectedRow:Int = -1
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        presenter = ContactListPresenter(view: self)
-    }
+    var viewModel: ContactListViewModelProtocol!
+    var selectedContact:ContactMVVM?
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        presenter?.refreshContent()
+        viewModel.refreshContent()
         tableView.reloadData()
     }
- 
-    // MARK: IBActions
     
+    // MARK: IBActions
     @IBAction func showAddNewContact(sender: AnyObject) {
         performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
     }
     
-    func updateCell(nickname:String?, phoneNumber:String?, avatarURL:String?) {
-        currentCell?.nicknameLabel?.text = nickname
-        currentCell?.phoneNumberLabel?.text = phoneNumber
-        
-        if let imageUrl = avatarURL {
-            currentCell?.avatarIV?.imageFromUrl(imageUrl)
-        } else {
-            currentCell?.avatarIV?.image = UIImage(named:"noUser")
-        }
-    }
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch (segue.identifier!) {
         case Constants.Segue_ToDetails:
             if let destination = segue.destinationViewController as? ContactDetailsViewController {
-                destination.presenter!.currentContact = presenter!.contactAtIndex(selectedRow)
+                destination.viewModel = self.viewModel.contactDetailViewModel
+                destination.isEditable = true
             }
-        default: break
+            break;
+        default: break;
         }
     }
-    
 }
+
 
 // MARK: UITableViewDataSource
 extension ContactListViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter!.totalContactsNumber()
+        return viewModel.getAllContactsCount()
     }
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        currentCell = tableView.dequeueReusableCellWithIdentifier(Constants.Cell_ContactCell) as? ContactCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
+        cell.viewModel = viewModel.cellModelAtIndex(indexPath.row)
         
-        presenter!.presentContact(indexPath.row)
-        
-        return currentCell!
+        return cell
     }
+    
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-
-            presenter?.removeContact(indexPath.row)
+            
+            viewModel.removeWithIndex(indexPath.row)
             tableView.reloadData()
         }
     }
@@ -92,7 +76,7 @@ extension ContactListViewController {
 // MARK: - UITableViewDelegate
 extension ContactListViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedRow = indexPath.row
+        viewModel?.selectWithIndex(indexPath.row)
         performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
     }
 }
