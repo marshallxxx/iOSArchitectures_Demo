@@ -9,21 +9,21 @@
 import Foundation
 
 class ExternalConnector {
-    static func sharedManager() -> ServicesManager<ContactMVC> {
+    static func sharedManager() -> ServicesManager<ContactMVVM> {
         struct Static {
             static var onceToken: dispatch_once_t = 0
-            static var instance: ServicesManager<ContactMVC>? = nil
+            static var instance: ServicesManager<ContactMVVM>? = nil
         }
         
         dispatch_once(&Static.onceToken) { () -> Void in
             
             let persistentOption = CoreDataManager()
-            let persistentSolution = PersistentManager<ContactMVC>(persistentOption: persistentOption)
+            let persistentSolution = PersistentManager<ContactMVVM>(persistentOption: persistentOption)
             
             let restCaller = RestAPICaller()
             let networkSerciveSolution = NetworkService(rest: restCaller)
             
-            Static.instance = ServicesManager<ContactMVC>(persistentSolution: persistentSolution, networkServiceSolution: networkSerciveSolution)
+            Static.instance = ServicesManager<ContactMVVM>(persistentSolution: persistentSolution, networkServiceSolution: networkSerciveSolution)
         }
         
         return Static.instance!

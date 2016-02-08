@@ -15,6 +15,7 @@ protocol ContactListPresenterProtocol: class {
     func totalContactsNumber() -> Int
     func presentContact(index:Int)
     func contactAtIndex(index: Int) -> ContactMVP
+    func removeContact(index: Int)
 }
 
 class ContactListPresenter: NSObject, ContactListPresenterProtocol {
@@ -47,6 +48,13 @@ class ContactListPresenter: NSObject, ContactListPresenterProtocol {
     
     func contactAtIndex(index: Int) -> ContactMVP {
         return allContacts![index]
+    }
+    
+    func removeContact(index: Int) {
+        if let contact = allContacts?[index] {
+            ExternalConnector.sharedManager().persistentManager.removePersistentObject(contact)
+            refreshContent()
+        }
     }
     
 }

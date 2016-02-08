@@ -94,10 +94,6 @@
 		479AE3451C639438005FE670 /* ContactDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE3431C639438005FE670 /* ContactDetailsPresenter.swift */; };
 		479AE3471C639445005FE670 /* AvatarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE3461C639445005FE670 /* AvatarListPresenter.swift */; };
 		479AE3481C639445005FE670 /* AvatarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE3461C639445005FE670 /* AvatarListPresenter.swift */; };
-		479AE3491C63A113005FE670 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378B51C624D8B00C40C16 /* Constants.swift */; };
-		479AE34A1C63A113005FE670 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378B51C624D8B00C40C16 /* Constants.swift */; };
-		479AE34B1C63A114005FE670 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378B51C624D8B00C40C16 /* Constants.swift */; };
-		479AE34C1C63A114005FE670 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378B51C624D8B00C40C16 /* Constants.swift */; };
 		479AE34D1C63A138005FE670 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE32E1C639389005FE670 /* ContactCell.swift */; };
 		479AE34E1C63A13B005FE670 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE32D1C639389005FE670 /* AvatarCell.swift */; };
 		479AE34F1C63A7B8005FE670 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378CC1C625C7400C40C16 /* NetworkModels.swift */; };
@@ -119,6 +115,30 @@
 		A2A5B9561C63908D002A8E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A5B9541C63908D002A8E87 /* Main.storyboard */; };
 		A2A5B9591C6390AF002A8E87 /* ExternalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B9571C6390AF002A8E87 /* ExternalConnector.swift */; };
 		A2A5B95A1C6390AF002A8E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A5B9581C6390AF002A8E87 /* Main.storyboard */; };
+		A2A5B95D1C63AA0A002A8E87 /* ContactMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B95C1C63AA0A002A8E87 /* ContactMVVM.swift */; };
+		A2A5B95E1C63AA0A002A8E87 /* ContactMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B95C1C63AA0A002A8E87 /* ContactMVVM.swift */; };
+		A2A5B9601C63ABD9002A8E87 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B95F1C63ABD9002A8E87 /* ContactListViewController.swift */; };
+		A2A5B9611C63ABD9002A8E87 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B95F1C63ABD9002A8E87 /* ContactListViewController.swift */; };
+		A2A5B9631C63AC19002A8E87 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B9621C63AC19002A8E87 /* ContactListViewModel.swift */; };
+		A2A5B9641C63AC19002A8E87 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B9621C63AC19002A8E87 /* ContactListViewModel.swift */; };
+		A2E7F6DC1C64A2C500C98A7D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6DA1C64A2C000C98A7D /* ContactCell.swift */; };
+		A2E7F6DD1C64A2C500C98A7D /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6DA1C64A2C000C98A7D /* ContactCell.swift */; };
+		A2E7F6DE1C64A43500C98A7D /* ExternalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B9531C63908D002A8E87 /* ExternalConnector.swift */; };
+		A2E7F6DF1C64A45000C98A7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378B51C624D8B00C40C16 /* Constants.swift */; };
+		A2E7F6E41C64AB7000C98A7D /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6E11C64AB2C00C98A7D /* ContactDetailsViewController.swift */; };
+		A2E7F6E51C64AB7000C98A7D /* AvatarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6E01C64AB2C00C98A7D /* AvatarListViewController.swift */; };
+		A2E7F6E61C64AB7100C98A7D /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6E11C64AB2C00C98A7D /* ContactDetailsViewController.swift */; };
+		A2E7F6E71C64AB7100C98A7D /* AvatarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6E01C64AB2C00C98A7D /* AvatarListViewController.swift */; };
+		A2E7F6F91C64ABEF00C98A7D /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6F81C64ABEF00C98A7D /* AvatarCell.swift */; };
+		A2E7F6FA1C64ABEF00C98A7D /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6F81C64ABEF00C98A7D /* AvatarCell.swift */; };
+		A2E7F6FC1C64AC2400C98A7D /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6FB1C64AC2400C98A7D /* ContactDetailsViewModel.swift */; };
+		A2E7F6FD1C64AC2400C98A7D /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6FB1C64AC2400C98A7D /* ContactDetailsViewModel.swift */; };
+		A2E7F6FF1C64D92200C98A7D /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6FE1C64D92200C98A7D /* ContactCellViewModel.swift */; };
+		A2E7F7001C64D92200C98A7D /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F6FE1C64D92200C98A7D /* ContactCellViewModel.swift */; };
+		A2E7F7021C689D4F00C98A7D /* AvatarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F7011C689D4F00C98A7D /* AvatarListViewModel.swift */; };
+		A2E7F7031C689D4F00C98A7D /* AvatarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F7011C689D4F00C98A7D /* AvatarListViewModel.swift */; };
+		A2E7F7051C689E3200C98A7D /* AvatarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F7041C689E3200C98A7D /* AvatarCellViewModel.swift */; };
+		A2E7F7061C689E3200C98A7D /* AvatarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F7041C689E3200C98A7D /* AvatarCellViewModel.swift */; };
 		ACBD1749C6DAF50D9DEA2D35 /* Pods_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4FA901296BB3C00CD416F /* Pods_VIPER.framework */; };
 		C7F391FB9A0B97D879E2E75D /* Pods_MVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF67EFA4859F0B14C66658D /* Pods_MVC.framework */; };
 /* End PBXBuildFile section */
@@ -229,6 +249,17 @@
 		A2A5B9541C63908D002A8E87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A2A5B9571C6390AF002A8E87 /* ExternalConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "\bExternalConnector.swift"; sourceTree = "<group>"; };
 		A2A5B9581C6390AF002A8E87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A2A5B95C1C63AA0A002A8E87 /* ContactMVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactMVVM.swift; sourceTree = "<group>"; };
+		A2A5B95F1C63ABD9002A8E87 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		A2A5B9621C63AC19002A8E87 /* ContactListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		A2E7F6DA1C64A2C000C98A7D /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		A2E7F6E01C64AB2C00C98A7D /* AvatarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarListViewController.swift; sourceTree = "<group>"; };
+		A2E7F6E11C64AB2C00C98A7D /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		A2E7F6F81C64ABEF00C98A7D /* AvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		A2E7F6FB1C64AC2400C98A7D /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
+		A2E7F6FE1C64D92200C98A7D /* ContactCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
+		A2E7F7011C689D4F00C98A7D /* AvatarListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarListViewModel.swift; sourceTree = "<group>"; };
+		A2E7F7041C689E3200C98A7D /* AvatarCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCellViewModel.swift; sourceTree = "<group>"; };
 		BDF67EFA4859F0B14C66658D /* Pods_MVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA885990C6B891E895CAD926 /* Pods-VIPERTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERTests/Pods-VIPERTests.release.xcconfig"; sourceTree = "<group>"; };
 		D32C8B8DA285CE82DEDEF379 /* Pods-MVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVCTests/Pods-MVCTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -543,6 +574,7 @@
 		479AE31D1C637570005FE670 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2A5B95C1C63AA0A002A8E87 /* ContactMVVM.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -550,6 +582,11 @@
 		479AE31F1C63759A005FE670 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A2A5B95F1C63ABD9002A8E87 /* ContactListViewController.swift */,
+				A2E7F6DA1C64A2C000C98A7D /* ContactCell.swift */,
+				A2E7F6E11C64AB2C00C98A7D /* ContactDetailsViewController.swift */,
+				A2E7F6E01C64AB2C00C98A7D /* AvatarListViewController.swift */,
+				A2E7F6F81C64ABEF00C98A7D /* AvatarCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -557,6 +594,11 @@
 		479AE3201C6375B6005FE670 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A2A5B9621C63AC19002A8E87 /* ContactListViewModel.swift */,
+				A2E7F6FE1C64D92200C98A7D /* ContactCellViewModel.swift */,
+				A2E7F6FB1C64AC2400C98A7D /* ContactDetailsViewModel.swift */,
+				A2E7F7011C689D4F00C98A7D /* AvatarListViewModel.swift */,
+				A2E7F7041C689E3200C98A7D /* AvatarCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1313,7 +1355,6 @@
 				479AE33F1C6393FC005FE670 /* AvatarListViewController.swift in Sources */,
 				479AE33C1C6393E9005FE670 /* ContactListViewController.swift in Sources */,
 				479AE3281C63935A005FE670 /* ExternalConnector.swift in Sources */,
-				479AE3491C63A113005FE670 /* Constants.swift in Sources */,
 				479AE34D1C63A138005FE670 /* ContactCell.swift in Sources */,
 				479AE3451C639438005FE670 /* ContactDetailsPresenter.swift in Sources */,
 				479AE3391C6393D2005FE670 /* ContactDetailsViewController.swift in Sources */,
@@ -1327,19 +1368,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2A5B95D1C63AA0A002A8E87 /* ContactMVVM.swift in Sources */,
+				A2E7F6DC1C64A2C500C98A7D /* ContactCell.swift in Sources */,
+				A2E7F6E41C64AB7000C98A7D /* ContactDetailsViewController.swift in Sources */,
 				479AE3121C634724005FE670 /* ServicesManager.swift in Sources */,
 				A2A5B9551C63908D002A8E87 /* ExternalConnector.swift in Sources */,
 				471378AE1C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
 				471378A21C624B6D00C40C16 /* Contacts.xcdatamodeld in Sources */,
+				A2E7F7051C689E3200C98A7D /* AvatarCellViewModel.swift in Sources */,
 				A2A5B94C1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378CE1C625C7400C40C16 /* NetworkModels.swift in Sources */,
 				471378511C6245C700C40C16 /* RestAPICaller.swift in Sources */,
 				471378551C6245C700C40C16 /* NetworkService.swift in Sources */,
+				A2E7F6FF1C64D92200C98A7D /* ContactCellViewModel.swift in Sources */,
+				A2A5B9631C63AC19002A8E87 /* ContactListViewModel.swift in Sources */,
 				471378A71C624B8000C40C16 /* CoreDataManager.swift in Sources */,
 				479AE30D1C633C7B005FE670 /* PersistentManager.swift in Sources */,
+				A2E7F6F91C64ABEF00C98A7D /* AvatarCell.swift in Sources */,
+				A2E7F6E51C64AB7000C98A7D /* AvatarListViewController.swift in Sources */,
+				A2E7F7021C689D4F00C98A7D /* AvatarListViewModel.swift in Sources */,
+				A2A5B9601C63ABD9002A8E87 /* ContactListViewController.swift in Sources */,
 				471377A61C623AEE00C40C16 /* AppDelegate.swift in Sources */,
 				471378B21C624C6C00C40C16 /* Contact.swift in Sources */,
 				471378B71C624D8B00C40C16 /* Constants.swift in Sources */,
+				A2E7F6FC1C64AC2400C98A7D /* ContactDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1347,9 +1399,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E7F6DD1C64A2C500C98A7D /* ContactCell.swift in Sources */,
+				A2E7F6DE1C64A43500C98A7D /* ExternalConnector.swift in Sources */,
+				A2A5B95E1C63AA0A002A8E87 /* ContactMVVM.swift in Sources */,
+				A2E7F7031C689D4F00C98A7D /* AvatarListViewModel.swift in Sources */,
+				A2E7F7061C689E3200C98A7D /* AvatarCellViewModel.swift in Sources */,
+				A2A5B9641C63AC19002A8E87 /* ContactListViewModel.swift in Sources */,
+				A2E7F6FD1C64AC2400C98A7D /* ContactDetailsViewModel.swift in Sources */,
+				A2E7F6FA1C64ABEF00C98A7D /* AvatarCell.swift in Sources */,
+				A2E7F6DF1C64A45000C98A7D /* Constants.swift in Sources */,
 				471377791C623ADD00C40C16 /* MVVMTests.swift in Sources */,
+				A2E7F6E61C64AB7100C98A7D /* ContactDetailsViewController.swift in Sources */,
+				A2E7F7001C64D92200C98A7D /* ContactCellViewModel.swift in Sources */,
+				A2E7F6E71C64AB7100C98A7D /* AvatarListViewController.swift in Sources */,
+				A2A5B9611C63ABD9002A8E87 /* ContactListViewController.swift in Sources */,
 				479AE3501C63A7B9005FE670 /* NetworkModels.swift in Sources */,
-				479AE34A1C63A113005FE670 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1379,7 +1443,6 @@
 			files = (
 				4713779D1C623AE400C40C16 /* VIPERTests.swift in Sources */,
 				479AE3511C63A7B9005FE670 /* NetworkModels.swift in Sources */,
-				479AE34B1C63A114005FE670 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,7 +1481,6 @@
 				471378021C62428400C40C16 /* MVCTests.swift in Sources */,
 				479AE32A1C639364005FE670 /* ContactListViewController.swift in Sources */,
 				479AE3521C63A7BA005FE670 /* NetworkModels.swift in Sources */,
-				479AE34C1C63A114005FE670 /* Constants.swift in Sources */,
 				479AE3291C63935C005FE670 /* ExternalConnector.swift in Sources */,
 				479AE3271C639337005FE670 /* ContactMVC.swift in Sources */,
 			);
@@ -1608,6 +1670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMVVM";
 				PRODUCT_BUNDLE_IDENTIFIER = com.endava.MVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1620,6 +1683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMVVM";
 				PRODUCT_BUNDLE_IDENTIFIER = com.endava.MVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

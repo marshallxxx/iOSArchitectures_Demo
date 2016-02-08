@@ -16,43 +16,20 @@ class ContactListViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        refreshContent()
+    }
+    
+    func refreshContent() {
         allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as! [ContactMVC]
         tableView.reloadData()
     }
     
-    // MARK: IBActions
     
+    // MARK: IBActions
     @IBAction func showAddNewContact(sender: AnyObject) {
         performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
     }
     
-    // MARK: UITableViewDataSource
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allContacts.count
-    }
-   
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.Cell_ContactCell) as! ContactCell
-        
-        let contact = allContacts[indexPath.row]
-        
-        cell.nicknameLabel?.text = contact.nickname
-        cell.phoneNumberLabel?.text = contact.phoneNumber
-        
-        if let imageUrl = contact.avatarURL {
-            cell.avatarIV?.imageFromUrl(imageUrl)
-        } else {
-            cell.avatarIV?.image = UIImage(named:"noUser")
-        }
-        
-        return cell
-    }
-    
-    // MARK: UITableViewDelegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedContact = allContacts[indexPath.row]
-        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
-    }
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -71,4 +48,52 @@ class ContactListViewController: UITableViewController {
         }
     }
     
+}
+
+
+// MARK: UITableViewDataSource
+extension ContactListViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allContacts.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.Cell_ContactCell) as! ContactCell
+        
+        let contact = allContacts[indexPath.row]
+        
+        cell.nicknameLabel?.text = contact.nickname
+        cell.phoneNumberLabel?.text = contact.phoneNumber
+        
+        if let imageUrl = contact.avatarURL {
+            cell.avatarIV?.imageFromUrl(imageUrl)
+        } else {
+            cell.avatarIV?.image = UIImage(named:"noUser")
+        }
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let item = allContacts[indexPath.row]
+            ExternalConnector.sharedManager().persistentManager.removePersistentObject(item)
+            
+            refreshContent()
+        }
+    }
+}
+
+
+// MARK: UITableViewDelegate
+extension ContactListViewController {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedContact = allContacts[indexPath.row]
+        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
+    }
 }
