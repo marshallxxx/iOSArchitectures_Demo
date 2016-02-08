@@ -11,9 +11,6 @@
 		471377551C623AA900C40C16 /* MVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471377541C623AA900C40C16 /* MVPTests.swift */; };
 		471377791C623ADD00C40C16 /* MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471377781C623ADD00C40C16 /* MVVMTests.swift */; };
 		4713779D1C623AE400C40C16 /* VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4713779C1C623AE400C40C16 /* VIPERTests.swift */; };
-		471377A51C623AEE00C40C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
-		471377A61C623AEE00C40C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
-		471377A71C623AEF00C40C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
 		471377AE1C623B0000C40C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471376F71C6239EF00C40C16 /* Assets.xcassets */; };
 		471377AF1C623B0000C40C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471376F71C6239EF00C40C16 /* Assets.xcassets */; };
 		471377B01C623B0100C40C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471376F71C6239EF00C40C16 /* Assets.xcassets */; };
@@ -21,7 +18,6 @@
 		471377B21C623B0600C40C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471376F91C6239EF00C40C16 /* LaunchScreen.storyboard */; };
 		471377B31C623B0700C40C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471376F91C6239EF00C40C16 /* LaunchScreen.storyboard */; };
 		471378021C62428400C40C16 /* MVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378011C62428400C40C16 /* MVCTests.swift */; };
-		4713780A1C62428E00C40C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
 		4713780C1C62429400C40C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471376F71C6239EF00C40C16 /* Assets.xcassets */; };
 		4713780D1C62429800C40C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471376F91C6239EF00C40C16 /* LaunchScreen.storyboard */; };
 		471378501C6245C700C40C16 /* RestAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4713784E1C6245C700C40C16 /* RestAPICaller.swift */; };
@@ -61,6 +57,9 @@
 		471378D51C6261AA00C40C16 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378D11C6261AA00C40C16 /* ContactDetailsViewController.swift */; };
 		471378DA1C6261D500C40C16 /* AvatarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378D61C6261D500C40C16 /* AvatarListViewController.swift */; };
 		471378DB1C6262FB00C40C16 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378C21C62535700C40C16 /* ContactCell.swift */; };
+		47477A2B1C64FB4E00E9CCAE /* ContactDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47477A271C64F8BD00E9CCAE /* ContactDetailsWireframe.swift */; };
+		47477A2C1C64FB5200E9CCAE /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47477A251C64F8AB00E9CCAE /* ContactDetailsViewController.swift */; };
+		47477A2D1C64FB5500E9CCAE /* ContactDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47477A291C64F9B200E9CCAE /* ContactDetailsPresenter.swift */; };
 		479AE30A1C633900005FE670 /* ContactMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE3091C633900005FE670 /* ContactMVC.swift */; };
 		479AE30C1C633C7B005FE670 /* PersistentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE30B1C633C7B005FE670 /* PersistentManager.swift */; };
 		479AE30D1C633C7B005FE670 /* PersistentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AE30B1C633C7B005FE670 /* PersistentManager.swift */; };
@@ -104,6 +103,28 @@
 		479AE3501C63A7B9005FE670 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378CC1C625C7400C40C16 /* NetworkModels.swift */; };
 		479AE3511C63A7B9005FE670 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378CC1C625C7400C40C16 /* NetworkModels.swift */; };
 		479AE3521C63A7BA005FE670 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471378CC1C625C7400C40C16 /* NetworkModels.swift */; };
+		47B790101C689742004C60E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A5B9581C6390AF002A8E87 /* Main.storyboard */; };
+		47B790141C689D62004C60E6 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790131C689D62004C60E6 /* RootWireframe.swift */; };
+		47B790161C68BD47004C60E6 /* AvatarChooserWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790151C68BD47004C60E6 /* AvatarChooserWireframe.swift */; };
+		47B790181C68BD5D004C60E6 /* AvatarChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790171C68BD5D004C60E6 /* AvatarChooserViewController.swift */; };
+		47B7901A1C68BD72004C60E6 /* AvatarChooserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790191C68BD72004C60E6 /* AvatarChooserPresenter.swift */; };
+		47B7901E1C68C736004C60E6 /* ContactVIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7901D1C68C736004C60E6 /* ContactVIPER.swift */; };
+		47B790201C68CA8E004C60E6 /* PresenterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7901F1C68CA8E004C60E6 /* PresenterModels.swift */; };
+		47B790221C68E343004C60E6 /* ContactDetailsModuleInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790211C68E343004C60E6 /* ContactDetailsModuleInterfaces.swift */; };
+		47B790241C68E39E004C60E6 /* ContactDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790231C68E39E004C60E6 /* ContactDetailsInteractor.swift */; };
+		47B790261C68E619004C60E6 /* AvatarChooserModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790251C68E619004C60E6 /* AvatarChooserModuleInterface.swift */; };
+		47B790281C68E67F004C60E6 /* AvatarChooserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B790271C68E67F004C60E6 /* AvatarChooserInteractor.swift */; };
+		47F67D101C64E6E400955691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
+		47F67D111C64E6E500955691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
+		47F67D121C64E6E500955691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471376ED1C6239EF00C40C16 /* AppDelegate.swift */; };
+		47F67D171C64E77D00955691 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47F67D161C64E77D00955691 /* Info.plist */; };
+		47F67D191C64E80900955691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D181C64E80900955691 /* AppDelegate.swift */; };
+		47F67D1B1C64E85A00955691 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D1A1C64E85A00955691 /* ContactListViewController.swift */; };
+		47F67D1D1C64E8B600955691 /* ContactsListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D1C1C64E8B600955691 /* ContactsListWireframe.swift */; };
+		47F67D1F1C64E8CC00955691 /* ContactsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D1E1C64E8CC00955691 /* ContactsListPresenter.swift */; };
+		47F67D211C64E91A00955691 /* ContactListModuleInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D201C64E91A00955691 /* ContactListModuleInterfaces.swift */; };
+		47F67D231C64E94000955691 /* ContactsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D221C64E94000955691 /* ContactsListInteractor.swift */; };
+		47F67D261C64EAAE00955691 /* CoreAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F67D251C64EAAE00955691 /* CoreAssemblies.swift */; };
 		4EA79DD776391B8643399960 /* Pods_MVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53144D185CEAB8CB42D20F6D /* Pods_MVP.framework */; };
 		6B2E9CAAB7363C6CB0756A4C /* Pods_MVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119A8F79866B4FCBCA5E728F /* Pods_MVPTests.framework */; };
 		7313C4B8EFB22680DE9B7B58 /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C615B8E1A8AD1DF75B93EC /* Pods_MVVM.framework */; };
@@ -118,7 +139,6 @@
 		A2A5B9551C63908D002A8E87 /* ExternalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B9531C63908D002A8E87 /* ExternalConnector.swift */; };
 		A2A5B9561C63908D002A8E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A5B9541C63908D002A8E87 /* Main.storyboard */; };
 		A2A5B9591C6390AF002A8E87 /* ExternalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5B9571C6390AF002A8E87 /* ExternalConnector.swift */; };
-		A2A5B95A1C6390AF002A8E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A5B9581C6390AF002A8E87 /* Main.storyboard */; };
 		ACBD1749C6DAF50D9DEA2D35 /* Pods_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB4FA901296BB3C00CD416F /* Pods_VIPER.framework */; };
 		C7F391FB9A0B97D879E2E75D /* Pods_MVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF67EFA4859F0B14C66658D /* Pods_MVC.framework */; };
 /* End PBXBuildFile section */
@@ -199,6 +219,9 @@
 		471378CC1C625C7400C40C16 /* NetworkModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		471378D11C6261AA00C40C16 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		471378D61C6261D500C40C16 /* AvatarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarListViewController.swift; sourceTree = "<group>"; };
+		47477A251C64F8AB00E9CCAE /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		47477A271C64F8BD00E9CCAE /* ContactDetailsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsWireframe.swift; sourceTree = "<group>"; };
+		47477A291C64F9B200E9CCAE /* ContactDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsPresenter.swift; sourceTree = "<group>"; };
 		479AE3091C633900005FE670 /* ContactMVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactMVC.swift; sourceTree = "<group>"; };
 		479AE30B1C633C7B005FE670 /* PersistentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentManager.swift; sourceTree = "<group>"; };
 		479AE3101C634724005FE670 /* ServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
@@ -213,6 +236,24 @@
 		479AE3401C63942A005FE670 /* ContactListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListPresenter.swift; sourceTree = "<group>"; };
 		479AE3431C639438005FE670 /* ContactDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsPresenter.swift; sourceTree = "<group>"; };
 		479AE3461C639445005FE670 /* AvatarListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarListPresenter.swift; sourceTree = "<group>"; };
+		47B790131C689D62004C60E6 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
+		47B790151C68BD47004C60E6 /* AvatarChooserWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarChooserWireframe.swift; sourceTree = "<group>"; };
+		47B790171C68BD5D004C60E6 /* AvatarChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarChooserViewController.swift; sourceTree = "<group>"; };
+		47B790191C68BD72004C60E6 /* AvatarChooserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarChooserPresenter.swift; sourceTree = "<group>"; };
+		47B7901D1C68C736004C60E6 /* ContactVIPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVIPER.swift; sourceTree = "<group>"; };
+		47B7901F1C68CA8E004C60E6 /* PresenterModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterModels.swift; sourceTree = "<group>"; };
+		47B790211C68E343004C60E6 /* ContactDetailsModuleInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsModuleInterfaces.swift; sourceTree = "<group>"; };
+		47B790231C68E39E004C60E6 /* ContactDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsInteractor.swift; sourceTree = "<group>"; };
+		47B790251C68E619004C60E6 /* AvatarChooserModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarChooserModuleInterface.swift; sourceTree = "<group>"; };
+		47B790271C68E67F004C60E6 /* AvatarChooserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarChooserInteractor.swift; sourceTree = "<group>"; };
+		47F67D161C64E77D00955691 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47F67D181C64E80900955691 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		47F67D1A1C64E85A00955691 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		47F67D1C1C64E8B600955691 /* ContactsListWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsListWireframe.swift; sourceTree = "<group>"; };
+		47F67D1E1C64E8CC00955691 /* ContactsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsListPresenter.swift; sourceTree = "<group>"; };
+		47F67D201C64E91A00955691 /* ContactListModuleInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListModuleInterfaces.swift; sourceTree = "<group>"; };
+		47F67D221C64E94000955691 /* ContactsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsListInteractor.swift; sourceTree = "<group>"; };
+		47F67D251C64EAAE00955691 /* CoreAssemblies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAssemblies.swift; sourceTree = "<group>"; };
 		51D7D735FC02893CF5D53EC2 /* Pods-VIPER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPER/Pods-VIPER.debug.xcconfig"; sourceTree = "<group>"; };
 		53144D185CEAB8CB42D20F6D /* Pods_MVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		639F07482637755228AF9F17 /* Pods_MVCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,8 +383,8 @@
 				471377111C623A0000C40C16 /* MVP */,
 				471377121C623A0C00C40C16 /* MVVM */,
 				471377131C623A1600C40C16 /* VIPER */,
-				471376ED1C6239EF00C40C16 /* AppDelegate.swift */,
 				479AE30B1C633C7B005FE670 /* PersistentManager.swift */,
+				471376ED1C6239EF00C40C16 /* AppDelegate.swift */,
 				479AE3101C634724005FE670 /* ServicesManager.swift */,
 				471378B51C624D8B00C40C16 /* Constants.swift */,
 				471377141C623A2F00C40C16 /* Services */,
@@ -393,8 +434,13 @@
 		471377131C623A1600C40C16 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				47F67D241C64EA8A00955691 /* Assemblies */,
+				47F67CF41C64DC9500955691 /* Modules */,
 				A2A5B9571C6390AF002A8E87 /* ExternalConnector.swift */,
+				47B790131C689D62004C60E6 /* RootWireframe.swift */,
 				A2A5B9581C6390AF002A8E87 /* Main.storyboard */,
+				47F67D181C64E80900955691 /* AppDelegate.swift */,
+				47F67D161C64E77D00955691 /* Info.plist */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -559,6 +605,270 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		47B7901B1C68C703004C60E6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				47B7901C1C68C717004C60E6 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		47B7901C1C68C717004C60E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47B7901D1C68C736004C60E6 /* ContactVIPER.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47F67CF41C64DC9500955691 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				47B7901B1C68C703004C60E6 /* Common */,
+				47F67CF71C64DCD900955691 /* AvatarChooser */,
+				47F67CF61C64DCC800955691 /* ContactDetails */,
+				47F67CF51C64DCA300955691 /* ContactsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		47F67CF51C64DCA300955691 /* ContactsList */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D081C64E5D200955691 /* Application Logic */,
+				47F67D091C64E5DC00955691 /* Module Interface */,
+				47F67D0A1C64E5E100955691 /* User Interface */,
+			);
+			path = ContactsList;
+			sourceTree = "<group>";
+		};
+		47F67CF61C64DCC800955691 /* ContactDetails */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D001C64E56A00955691 /* Application Logic */,
+				47F67D011C64E57600955691 /* Module Interface */,
+				47F67D021C64E57B00955691 /* User Interface */,
+			);
+			path = ContactDetails;
+			sourceTree = "<group>";
+		};
+		47F67CF71C64DCD900955691 /* AvatarChooser */ = {
+			isa = PBXGroup;
+			children = (
+				47F67CF81C64E3AE00955691 /* Application Logic */,
+				47F67CF91C64E3BE00955691 /* Module Interface */,
+				47F67CFA1C64E45D00955691 /* User Interface */,
+			);
+			path = AvatarChooser;
+			sourceTree = "<group>";
+		};
+		47F67CF81C64E3AE00955691 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				47F67CFB1C64E4BC00955691 /* Interactor */,
+				47F67CFC1C64E4C100955691 /* Models */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		47F67CF91C64E3BE00955691 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				47B790251C68E619004C60E6 /* AvatarChooserModuleInterface.swift */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		47F67CFA1C64E45D00955691 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				47F67CFE1C64E50A00955691 /* View */,
+				47F67CFD1C64E4FA00955691 /* Presenter */,
+				47F67CFF1C64E51500955691 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		47F67CFB1C64E4BC00955691 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				47B790271C68E67F004C60E6 /* AvatarChooserInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		47F67CFC1C64E4C100955691 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47F67CFD1C64E4FA00955691 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				47B790191C68BD72004C60E6 /* AvatarChooserPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		47F67CFE1C64E50A00955691 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47B790171C68BD5D004C60E6 /* AvatarChooserViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47F67CFF1C64E51500955691 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				47B790151C68BD47004C60E6 /* AvatarChooserWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		47F67D001C64E56A00955691 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D031C64E58800955691 /* Interactor */,
+				47F67D041C64E58E00955691 /* Models */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		47F67D011C64E57600955691 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				47B790211C68E343004C60E6 /* ContactDetailsModuleInterfaces.swift */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		47F67D021C64E57B00955691 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D061C64E59A00955691 /* View */,
+				47F67D071C64E59F00955691 /* Presenter */,
+				47F67D051C64E59500955691 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		47F67D031C64E58800955691 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				47B790231C68E39E004C60E6 /* ContactDetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		47F67D041C64E58E00955691 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47F67D051C64E59500955691 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				47477A271C64F8BD00E9CCAE /* ContactDetailsWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		47F67D061C64E59A00955691 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47477A251C64F8AB00E9CCAE /* ContactDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47F67D071C64E59F00955691 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				47477A291C64F9B200E9CCAE /* ContactDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		47F67D081C64E5D200955691 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D0C1C64E5FE00955691 /* Interactor */,
+				47F67D0B1C64E5F900955691 /* Models */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		47F67D091C64E5DC00955691 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D201C64E91A00955691 /* ContactListModuleInterfaces.swift */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		47F67D0A1C64E5E100955691 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D0E1C64E60A00955691 /* View */,
+				47F67D0D1C64E60500955691 /* Presenter */,
+				47F67D0F1C64E60E00955691 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		47F67D0B1C64E5F900955691 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47F67D0C1C64E5FE00955691 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D221C64E94000955691 /* ContactsListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		47F67D0D1C64E60500955691 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D1E1C64E8CC00955691 /* ContactsListPresenter.swift */,
+				47B7901F1C68CA8E004C60E6 /* PresenterModels.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		47F67D0E1C64E60A00955691 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D1A1C64E85A00955691 /* ContactListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47F67D0F1C64E60E00955691 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D1C1C64E8B600955691 /* ContactsListWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		47F67D241C64EA8A00955691 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				47F67D251C64EAAE00955691 /* CoreAssemblies.swift */,
+			);
+			path = Assemblies;
 			sourceTree = "<group>";
 		};
 		5966CED9B6864161B6F6F050 /* Frameworks */ = {
@@ -878,9 +1188,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2A5B95A1C6390AF002A8E87 /* Main.storyboard in Resources */,
+				47F67D171C64E77D00955691 /* Info.plist in Resources */,
 				471377B31C623B0700C40C16 /* LaunchScreen.storyboard in Resources */,
 				471377B01C623B0100C40C16 /* Assets.xcassets in Resources */,
+				47B790101C689742004C60E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,6 +1589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F67D101C64E6E400955691 /* AppDelegate.swift in Sources */,
 				479AE3111C634724005FE670 /* ServicesManager.swift in Sources */,
 				A2A5B9511C63906F002A8E87 /* ExternalConnector.swift in Sources */,
 				471378AD1C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
@@ -1295,7 +1607,6 @@
 				471378A61C624B8000C40C16 /* CoreDataManager.swift in Sources */,
 				479AE30C1C633C7B005FE670 /* PersistentManager.swift in Sources */,
 				479AE33E1C6393FC005FE670 /* AvatarListViewController.swift in Sources */,
-				471377A51C623AEE00C40C16 /* AppDelegate.swift in Sources */,
 				471378B11C624C6C00C40C16 /* Contact.swift in Sources */,
 				479AE3251C63932E005FE670 /* ContactMVP.swift in Sources */,
 				471378B61C624D8B00C40C16 /* Constants.swift in Sources */,
@@ -1335,9 +1646,9 @@
 				471378CE1C625C7400C40C16 /* NetworkModels.swift in Sources */,
 				471378511C6245C700C40C16 /* RestAPICaller.swift in Sources */,
 				471378551C6245C700C40C16 /* NetworkService.swift in Sources */,
+				47F67D111C64E6E500955691 /* AppDelegate.swift in Sources */,
 				471378A71C624B8000C40C16 /* CoreDataManager.swift in Sources */,
 				479AE30D1C633C7B005FE670 /* PersistentManager.swift in Sources */,
-				471377A61C623AEE00C40C16 /* AppDelegate.swift in Sources */,
 				471378B21C624C6C00C40C16 /* Contact.swift in Sources */,
 				471378B71C624D8B00C40C16 /* Constants.swift in Sources */,
 			);
@@ -1359,15 +1670,34 @@
 			files = (
 				479AE3131C634724005FE670 /* ServicesManager.swift in Sources */,
 				A2A5B9591C6390AF002A8E87 /* ExternalConnector.swift in Sources */,
+				47B7901E1C68C736004C60E6 /* ContactVIPER.swift in Sources */,
+				47F67D1D1C64E8B600955691 /* ContactsListWireframe.swift in Sources */,
 				471378AF1C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
+				47B790281C68E67F004C60E6 /* AvatarChooserInteractor.swift in Sources */,
+				47B790141C689D62004C60E6 /* RootWireframe.swift in Sources */,
+				47477A2D1C64FB5500E9CCAE /* ContactDetailsPresenter.swift in Sources */,
+				47B790181C68BD5D004C60E6 /* AvatarChooserViewController.swift in Sources */,
+				47477A2B1C64FB4E00E9CCAE /* ContactDetailsWireframe.swift in Sources */,
 				471378A31C624B6D00C40C16 /* Contacts.xcdatamodeld in Sources */,
+				47F67D1B1C64E85A00955691 /* ContactListViewController.swift in Sources */,
+				47F67D191C64E80900955691 /* AppDelegate.swift in Sources */,
+				47477A2C1C64FB5200E9CCAE /* ContactDetailsViewController.swift in Sources */,
 				A2A5B94D1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378CF1C625C7400C40C16 /* NetworkModels.swift in Sources */,
+				47F67D1F1C64E8CC00955691 /* ContactsListPresenter.swift in Sources */,
+				47B790201C68CA8E004C60E6 /* PresenterModels.swift in Sources */,
 				471378521C6245C700C40C16 /* RestAPICaller.swift in Sources */,
+				47B790241C68E39E004C60E6 /* ContactDetailsInteractor.swift in Sources */,
+				47B790261C68E619004C60E6 /* AvatarChooserModuleInterface.swift in Sources */,
 				471378561C6245C700C40C16 /* NetworkService.swift in Sources */,
+				47F67D261C64EAAE00955691 /* CoreAssemblies.swift in Sources */,
 				471378A81C624B8000C40C16 /* CoreDataManager.swift in Sources */,
 				479AE30E1C633C7B005FE670 /* PersistentManager.swift in Sources */,
-				471377A71C623AEF00C40C16 /* AppDelegate.swift in Sources */,
+				47B790161C68BD47004C60E6 /* AvatarChooserWireframe.swift in Sources */,
+				47B7901A1C68BD72004C60E6 /* AvatarChooserPresenter.swift in Sources */,
+				47F67D211C64E91A00955691 /* ContactListModuleInterfaces.swift in Sources */,
+				47B790221C68E343004C60E6 /* ContactDetailsModuleInterfaces.swift in Sources */,
+				47F67D231C64E94000955691 /* ContactsListInteractor.swift in Sources */,
 				471378B31C624C6C00C40C16 /* Contact.swift in Sources */,
 				471378B81C624D8B00C40C16 /* Constants.swift in Sources */,
 			);
@@ -1389,13 +1719,13 @@
 			files = (
 				471378B01C624C6C00C40C16 /* Contact+CoreDataProperties.swift in Sources */,
 				471378A41C624B6D00C40C16 /* Contacts.xcdatamodeld in Sources */,
+				47F67D121C64E6E500955691 /* AppDelegate.swift in Sources */,
 				471378C11C6252B300C40C16 /* ContactListViewController.swift in Sources */,
 				471378D01C625C7400C40C16 /* NetworkModels.swift in Sources */,
 				471378531C6245C700C40C16 /* RestAPICaller.swift in Sources */,
 				471378571C6245C700C40C16 /* NetworkService.swift in Sources */,
 				471378CB1C6258B200C40C16 /* AvatarCell.swift in Sources */,
 				471378A91C624B8000C40C16 /* CoreDataManager.swift in Sources */,
-				4713780A1C62428E00C40C16 /* AppDelegate.swift in Sources */,
 				A2A5B94E1C6357F7002A8E87 /* UIImage+Category.swift in Sources */,
 				471378B41C624C6C00C40C16 /* Contact.swift in Sources */,
 				471378D51C6261AA00C40C16 /* ContactDetailsViewController.swift in Sources */,
@@ -1656,8 +1986,9 @@
 			baseConfigurationReference = 51D7D735FC02893CF5D53EC2 /* Pods-VIPER.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Contacts/Info.plist;
+				INFOPLIST_FILE = Contacts/VIPER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DVIPER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.endava.VIPER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1668,8 +1999,9 @@
 			baseConfigurationReference = 719BDEA343E2CB740D8D2B33 /* Pods-VIPER.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Contacts/Info.plist;
+				INFOPLIST_FILE = Contacts/VIPER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DVIPER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.endava.VIPER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

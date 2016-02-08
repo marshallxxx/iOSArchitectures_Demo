@@ -79,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZA-fk-pjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="375"/>
+            <point key="canvasLocation" x="733" y="473"/>
         </scene>
         <!--Title-->
         <scene sceneID="nXr-74-Oyh">
@@ -171,8 +171,6 @@
         <!--Choose avatar-->
         <scene sceneID="qFJ-9X-Vsy">
             <objects>
-                <exit id="L0d-gT-ZTM" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uM8-lP-vpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="Kxz-qw-Iw2" customClass="AvatarListViewController" customModule="MVP" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DBI-uT-gdB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -248,8 +246,10 @@
                         <segue destination="L0d-gT-ZTM" kind="unwind" identifier="toEditContact" unwindAction="unwindForSegue:" id="ir3-xp-Q2r"/>
                     </connections>
                 </collectionViewController>
+                <exit id="L0d-gT-ZTM" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uM8-lP-vpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185" y="375"/>
+            <point key="canvasLocation" x="2256" y="473"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ib-3A-O8o">
@@ -265,7 +265,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiy-eB-8VG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="375"/>
+            <point key="canvasLocation" x="25" y="473"/>
         </scene>
     </scenes>
     <resources>
@@ -273,6 +273,6 @@
         <image name="noUser" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X7N-sE-U7O"/>
+        <segue reference="Gcg-L6-Wav"/>
     </inferredMetricsTieBreakers>
 </document>
