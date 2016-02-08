@@ -69,6 +69,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="JxJ-Lh-ObJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yhV-dl-Pu6">
                             <connections>
+                                <action selector="showAddNewContact:" destination="HFz-6F-gTv" id="TjE-mq-86R"/>
                                 <segue destination="OII-WG-Frb" kind="show" identifier="toNewEntry" id="X7N-sE-U7O"/>
                             </connections>
                         </barButtonItem>
@@ -84,7 +85,7 @@
         <!--Title-->
         <scene sceneID="nXr-74-Oyh">
             <objects>
-                <viewController id="OII-WG-Frb" customClass="ContactDetailsViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OII-WG-Frb" customClass="ContactDetailsViewController" customModule="MVVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RFc-TR-9a9"/>
                         <viewControllerLayoutGuide type="bottom" id="zB0-qx-B8L"/>

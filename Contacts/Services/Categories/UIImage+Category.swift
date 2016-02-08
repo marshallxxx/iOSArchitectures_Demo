@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    public func imageFromUrl(urlString: String) {
-        if let url = NSURL(string: urlString) {
-            let request = NSURLRequest(URL: url)
-            
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-                (response, data, error) -> Void in
-                self.image = UIImage(data: data!)
+    public func imageFromUrl(urlString: String?) {
+        if let urlStr = urlString {
+            if let url = NSURL(string: urlStr) {
+                let request = NSURLRequest(URL: url)
+                
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                    (response, data, error) -> Void in
+                    self.image = UIImage(data: data!)
+                }
             }
         }
     }

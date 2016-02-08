@@ -83,6 +83,7 @@ class CoreDataManager: PersistenStoreProtocol {
     func removeContactWithID(contactID: Int) -> Bool {
         if let contact = getContactWithID(contactID) {
             managedObjectContext.deleteObject(contact)
+            saveContext()
             return true
         } else {
             return false

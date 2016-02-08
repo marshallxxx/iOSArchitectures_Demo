@@ -8,15 +8,58 @@
 
 import UIKit
 import CoreData
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    #if MVVM
+    let container = Container() { container in
+        
+        // Models
+        container.register(ContactMVVM.self) { _ in ContactMVVM() }
+        container.register(Avatar.self) { _ in Avatar() }
+        
+        // View models
+        container.register(ContactListViewModelProtocol.self) {r in
+            let viewModel = ContactListViewModel()
+            viewModel.contactDetailViewModel = r.resolve(ContactDetailsViewModelProtocol.self)!
+            return viewModel
+        }.inObjectScope(.Container)
+        container.register(ContactDetailsViewModelProtocol.self) { _ in
+            return ContactDetailsViewModel()
+        }.inObjectScope(.Container)
+        container.register(AvatarListViewModelProtocol.self) { _ in
+            return AvatarListViewModel()
+        }
+
+        // Views
+        container.registerForStoryboard(ContactListViewController.self) { r, c in
+            c.viewModel = r.resolve(ContactListViewModelProtocol.self)!
+        }
+        container.registerForStoryboard(ContactDetailsViewController.self) { r, c in
+            c.viewModel = r.resolve(ContactDetailsViewModelProtocol.self)!
+        }
+        container.registerForStoryboard(AvatarListViewController.self) { r, c in
+            c.viewModel = r.resolve(AvatarListViewModelProtocol.self)!
+        }
+    }
+    #endif
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        #if MVVM
+            
+            let bundle = NSBundle(forClass: ContactListViewController.self)
+            let storyboard = SwinjectStoryboard.create(name: "Main", bundle: bundle, container: container)
+            window!.rootViewController = storyboard.instantiateInitialViewController()
+            
+        #endif
+        
         return true
     }
 
