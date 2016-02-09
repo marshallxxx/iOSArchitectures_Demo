@@ -12,6 +12,7 @@ import Foundation
     weak var view: ContactDetailsViewInterface? { get set }
     weak var wireframe: ContactDetailsWireframe? { get set }
     
+    func reloadData()
     func chooseAvatar()
     func saveContact()
 }
@@ -19,14 +20,24 @@ import Foundation
 @objc protocol ContactDetailsViewInterface {
     var eventHandler: ContactDetailsPresenterInterface? { get set }
     
-    func getContactNickname() -> String
-    func getContactPhone() -> String
+    func getContactNickname() -> String?
+    func setContactNickname(value:String?)
+    func getContactPhone() -> String?
+    func setContactPhone(value:String?)
+    func getAvatarUrl() -> String?
+    func setAvatarUrl(value:String?)
 }
 
 @objc protocol ContactDetailsInteractorInput {
-//    func saveContact(name:String)
+    func saveContact(contactID: Int, nickname:String?, phone: String?, avatarUrl: String?)
+    func retrieveContactDetails(contactID:Int)
 }
 
 @objc protocol ContactDetailsInteractorOutput {
-    
+    func contactDetailsRetrieved(contactDetails:ContactDetailsDisplayData?)
+}
+
+@objc protocol ContactDetailsModuleDelegate {
+    func contactDetailsDidEndEditing()
+    func editingContactID() -> Int
 }

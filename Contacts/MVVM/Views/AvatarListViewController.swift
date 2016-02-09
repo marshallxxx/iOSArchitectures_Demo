@@ -31,7 +31,6 @@ class AvatarListViewController: UICollectionViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.Segue_ToEditContact {
             let VC = segue.destinationViewController as? ContactDetailsViewController

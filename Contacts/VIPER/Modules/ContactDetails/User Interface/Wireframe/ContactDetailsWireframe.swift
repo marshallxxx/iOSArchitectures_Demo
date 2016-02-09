@@ -30,4 +30,8 @@ class ContactDetailsWireframe: NSObject {
         avatarChooserWireframe!.presentAvatarChooserViewFromViewController(view as! UIViewController)
     }
     
+    func dismissViewController() {
+        (presenter.view as! UIViewController).navigationController!.popViewControllerAnimated(true)
+    }
+    
 }

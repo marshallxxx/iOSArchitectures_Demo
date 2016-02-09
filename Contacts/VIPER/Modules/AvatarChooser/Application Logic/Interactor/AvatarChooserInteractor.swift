@@ -8,6 +8,31 @@
 
 import Foundation
 
-class AvatarChooserInteractor: NSObject {
+class AvatarChooserInteractor: NSObject, AvatarChooserInteractorInput {
 
+    private var externalServices: ServicesManager<ContactVIPER>
+    weak var output: AvatarChooserInteractorOutput?
+    
+    override init() {
+        externalServices = ExternalConnector.sharedManager()
+        super.init()
+    }
+    
+    
+    // MARK: AvatarChooserInteractorInput
+    
+    func findAvailableAvatars() {
+        
+        externalServices.networkManager.getAvatarList { [weak self] (error, avatars) -> () in
+            
+            if error != nil || avatars == nil {
+                self?.output?.failedToLoadAvailableAvatars()
+            } else {
+                self?.output?.foundAvailableAvatars(avatars!)
+            }
+            
+        }
+        
+    }
+    
 }

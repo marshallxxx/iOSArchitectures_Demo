@@ -17,7 +17,7 @@ import Foundation
         super.init()
     }
     
-    func getSectionNumber() -> Int {
+    func getNumberSection() -> Int {
         return allSections.count
     }
     
@@ -45,11 +45,13 @@ import Foundation
 }
 
 @objc class ContactDisplayData: NSObject {
-    var name: String
-    var phone: String
-    var avatarUrl: String
+    var name: String?
+    var phone: String?
+    var avatarUrl: String?
+    var contactID: Int
     
-    init(name: String, phone: String, avatarUrl: String) {
+    init(contactID: Int, name: String?, phone: String?, avatarUrl: String?) {
+        self.contactID = contactID
         self.name = name
         self.phone = phone
         self.avatarUrl = avatarUrl

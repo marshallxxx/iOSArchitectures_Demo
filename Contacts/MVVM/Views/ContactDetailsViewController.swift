@@ -26,7 +26,7 @@ class ContactDetailsViewController: UIViewController {
                 .start()
             viewModel.contactAvatar.producer
                 .on(next: {  self.contactAvatar?.imageFromUrl($0) })
-                .start()            
+                .start()
         }
     }
     

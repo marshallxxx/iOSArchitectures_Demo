@@ -41,8 +41,8 @@ class ContactListViewController: UITableViewController, ContactsListViewInterfac
         return eventHandler!.numberOfSections()
     }
     
-    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-        return eventHandler!.sectionsName()
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return eventHandler!.sectionName(section)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,9 +50,26 @@ class ContactListViewController: UITableViewController, ContactsListViewInterfac
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell") as! ContactCell
         
-        return cell!
+        eventHandler!.setupContactInfo(indexPath.section, index: indexPath.row) { (name, phone, avatarURL) -> () in
+            
+            cell.nicknameLabel?.text = name
+            cell.phoneLabel?.text = phone
+            
+            if let url = avatarURL {
+                cell.avatarIV?.imageFromUrl(url)
+            } else {
+                cell.avatarIV?.image = UIImage(named: "noUser")
+            }
+
+        }
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        eventHandler?.editContact(indexPath.section, index: indexPath.row)
     }
     
 }

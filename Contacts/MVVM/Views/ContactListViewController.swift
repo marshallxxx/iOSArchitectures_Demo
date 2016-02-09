@@ -14,7 +14,6 @@ import Swinject
 class ContactListViewController: UITableViewController {
     
     var viewModel: ContactListViewModelProtocol!
-    var selectedContact:ContactMVVM?
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

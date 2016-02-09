@@ -12,6 +12,21 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewInterfac
     
     var eventHandler: ContactDetailsPresenterInterface?
     
+    @IBOutlet weak var avatarIV: UIImageView?
+    @IBOutlet weak var nicknameTF: UITextField?
+    @IBOutlet weak var phoneNumberTF: UITextField?
+    
+    private var avatarURL: String?
+    
+    private var avatarUrl:String?
+    
+    // MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        eventHandler!.reloadData()
+    }
     
     // MARK: IBActions
     
@@ -23,12 +38,34 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewInterfac
         eventHandler!.saveContact()
     }
     
-    func getContactNickname() -> String {
-        return ""
+    func getContactNickname() -> String? {
+        return nicknameTF?.text
     }
     
-    func getContactPhone() -> String {
-        return ""
+    func getContactPhone() -> String? {
+        return phoneNumberTF?.text
+    }
+    
+    func setContactNickname(value:String?) {
+        nicknameTF?.text = value
+    }
+    
+    func setContactPhone(value:String?) {
+        phoneNumberTF?.text = value
+    }
+    
+    func getAvatarUrl() -> String? {
+        return avatarURL
+    }
+    
+    func setAvatarUrl(value:String?) {
+        avatarURL = value
+        
+        if let url = avatarURL {
+            avatarIV?.imageFromUrl(url)
+        } else {
+            avatarIV?.image = UIImage(named: "noUser")
+        }
     }
     
 }

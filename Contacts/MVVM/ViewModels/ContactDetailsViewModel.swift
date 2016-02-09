@@ -28,7 +28,6 @@ class ContactDetailsViewModel: ContactDetailsViewModelProtocol {
     let contactAvatar = MutableProperty<String?>(nil)
     
     var selectedContact: ContactMVVM?
-
     
     func selectContact(contact: ContactMVVM) {
         selectedContact = contact
@@ -36,7 +35,6 @@ class ContactDetailsViewModel: ContactDetailsViewModelProtocol {
         self.contactPhone.value = contact.phoneNumber!
         self.contactAvatar.value = contact.avatarURL
     }
-    
     
     func saveContact(name: String, phone: String, avatar: String?) -> Bool {
         

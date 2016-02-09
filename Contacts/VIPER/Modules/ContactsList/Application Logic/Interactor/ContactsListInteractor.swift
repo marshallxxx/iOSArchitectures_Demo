@@ -10,9 +10,10 @@ import Foundation
 
 extension ContactVIPER {
     func toContactDisplayData() -> ContactDisplayData {
-        return ContactDisplayData(name: self.nickname ?? "",
-            phone: self.phoneNumber ?? "",
-            avatarUrl: self.avatarURL ?? "")
+        return ContactDisplayData(contactID: self.contactID,
+            name: self.nickname,
+            phone: self.phoneNumber,
+            avatarUrl: self.avatarURL)
     }
 }
 
@@ -49,7 +50,7 @@ class ContactsListInteractor: NSObject, ContactListInteractorInput {
             let firstLetter = String(contact.nickname?.characters.first ?? Character(" ") )
             
             if letter != firstLetter {
-                appendSection(self.convertToDisplayData(Array(sortedArray[letterIndex...index])), name: letter)
+                appendSection(self.convertToDisplayData(Array(sortedArray[letterIndex..<index])), name: letter)
                 letter = firstLetter
                 letterIndex = index
             }

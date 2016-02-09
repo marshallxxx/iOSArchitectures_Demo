@@ -21,6 +21,7 @@ protocol PersistentManagerProtocol {
     typealias ReturnType
     
     func getAllPersistentContacts() -> [ReturnType]?
+    func getContactWithID(contactID: Int) -> ReturnType?
     func addToPersistentContact(newObject:ReturnType) -> Bool
     func removePersistentObject(objectToRemove:ReturnType) -> Bool
     func updateContact(contact:ReturnType) -> Bool
@@ -55,6 +56,21 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         }
         
         return resultContacts
+    }
+    
+    func getContactWithID(contactID: Int) -> ReturnType? {
+        
+        if let returnContact = persistentManager.getContactWithID(contactID) {
+            let t = T()
+            t.contactID = returnContact.contactID
+            t.nickname = returnContact.nickname
+            t.phoneNumber = returnContact.phoneNumber
+            t.avatarURL = returnContact.avatarURL
+            
+            return t
+        }
+        
+        return nil
     }
     
     func addToPersistentContact(newObject:ReturnType) -> Bool {

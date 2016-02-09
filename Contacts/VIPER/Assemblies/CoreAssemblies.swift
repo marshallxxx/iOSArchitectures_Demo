@@ -75,6 +75,7 @@ class ContactListAssembly: TyphoonAssembly {
 
 class ContactDetailsAssembly: TyphoonAssembly {
     var avatarChooserAssembly: AvatarChooserAssembly?
+    var contactListAssembly:ContactListAssembly?
     
     dynamic func contactDetailsWireframe() -> AnyObject {
         return TyphoonDefinition.withClass((ContactDetailsWireframe.self), configuration: { [unowned self] (definition) -> Void in
@@ -94,6 +95,7 @@ class ContactDetailsAssembly: TyphoonAssembly {
             })
             
             definition.injectProperty("wireframe", with: self.contactDetailsWireframe())
+            definition.injectProperty("moduleDelegate", with: self.contactListAssembly!.contactsListPresenter())
         })
     }
     
@@ -107,6 +109,8 @@ class ContactDetailsAssembly: TyphoonAssembly {
 
 class AvatarChooserAssembly: TyphoonAssembly {
     
+    var contactDetailsAssembly:ContactDetailsAssembly?
+    
     dynamic func avatarChooserWireframe() -> AnyObject {
         return TyphoonDefinition.withClass((AvatarChooserWireframe.self), configuration: { [unowned self] (definition) -> Void in
             definition.useInitializer("initWithPresenter:", parameters: { (initializer) -> Void in
@@ -116,7 +120,21 @@ class AvatarChooserAssembly: TyphoonAssembly {
     }
     
     private dynamic func avatarChooserPresenter() -> AnyObject {
-        return TyphoonDefinition.withClass((AvatarChooserPresenter.self))
+        return TyphoonDefinition.withClass(AvatarChooserPresenter.self, configuration: { [unowned self] (definition) -> Void in
+            definition.useInitializer("initWithInteractor:", parameters: { (initializer) -> Void in
+                initializer.injectParameterWith(self.avatarChooserInteractor())
+            })
+            
+            definition.injectProperty("wireframe", with: self.avatarChooserWireframe())
+            definition.injectProperty("moduleDelegate", with: self.contactDetailsAssembly!.contactDetailsPresenter())
+            
+        })
+    }
+    
+    private dynamic func avatarChooserInteractor() -> AnyObject {
+        return TyphoonDefinition.withClass((AvatarChooserInteractor.self), configuration: { [unowned self] (definition) -> Void in
+            definition.injectProperty("output", with: self.avatarChooserPresenter())
+            })
     }
     
 }

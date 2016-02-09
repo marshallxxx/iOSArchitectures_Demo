@@ -26,4 +26,8 @@ class AvatarChooserWireframe: NSObject {
         viewController.navigationController?.pushViewController(view, animated: true)
     }
     
+    func dismissViewController() {
+        (presenter.view as! UIViewController).navigationController!.popViewControllerAnimated(true)
+    }
+    
 }
