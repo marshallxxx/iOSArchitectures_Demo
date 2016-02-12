@@ -10,8 +10,8 @@ import Foundation
 
 class ContactDetailsDisplayData: NSObject {
 
-    var nickname:String?
-    var phone:String?
-    var avatarUrl:String?
+    var nickname: String?
+    var phone: String?
+    var avatarUrl: String?
     
 }

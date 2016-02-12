@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ContactDetailsViewProtocol: class {
-    func contactSavedWithResult(result:Bool)
+    func contactSavedWithResult(result: Bool)
 }
 
 class ContactDetailsViewController: UIViewController, ContactDetailsViewProtocol {
@@ -43,7 +43,7 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewProtocol
     }
     
     @IBAction func pickContactAvatart(sender: AnyObject) {
-        performSegueWithIdentifier(Constants.Segue_ToAvatars, sender: self)
+        performSegueWithIdentifier(Constants.SegueToAvatars, sender: self)
     }
     
     @IBAction func unwindForSegue(unwindSegue: UIStoryboardSegue) {
@@ -60,7 +60,7 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewProtocol
     }
     
     // MARK: ContactDetailsViewProtocol
-    func contactSavedWithResult(result:Bool) {
+    func contactSavedWithResult(result: Bool) {
         if result {
             navigationController?.popViewControllerAnimated(true)
         } else {
@@ -68,5 +68,4 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewProtocol
             alert.show()
         }
     }
-    
 }

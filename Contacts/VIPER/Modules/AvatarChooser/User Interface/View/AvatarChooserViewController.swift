@@ -36,7 +36,7 @@ class AvatarChooserViewController: UICollectionViewController, AvatarChooserView
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AvatarCell", forIndexPath: indexPath) as! AvatarCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AvatarCell", forIndexPath: indexPath) as? AvatarCell
         
         eventHandler.setupAvatarInfo(indexPath.row, setup: { (name, avatarURL) -> () in
             cell.avatarIV?.imageFromUrl(avatarURL)

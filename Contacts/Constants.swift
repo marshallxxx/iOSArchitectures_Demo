@@ -12,15 +12,15 @@ class Constants {
     
     // MARK: Segues
     
-    static let Segue_ToDetails = "toDetails"
-    static let Segue_ToAvatars = "toAvatars"
-    static let Segue_ToEditContact = "toEditContact"
-    static let Segue_ToNewEntry = "toNewEntry"
-    
+    static let SegueToDetails     = "toDetails"
+    static let SegueToAvatars     = "toAvatars"
+    static let SegueToEditContact = "toEditContact"
+    static let SegueToNewEntry    = "toNewEntry"
+
     // MARK: Cells
-    
-    static let Cell_ContactCell = "ContactCell"
-    static let Cell_AvatarCell = "AvatarCell"
+
+    static let CellContactCell    = "ContactCell"
+    static let CellAvatarCell     = "AvatarCell"
     
     
 }

@@ -14,16 +14,16 @@ protocol PersistenStoreProtocol {
     func newContact() -> Contact
     func removeContactWithID(contactID: Int) -> Bool
     func getAllContacts() -> [Contact]?
-    func getContactWithID(contactID:Int) -> Contact?
-    func updateContact(contact:Contact) -> Bool
-    func getContacts(contactKey:String, contactValue:String) -> [Contact]?
+    func getContactWithID(contactID: Int) -> Contact?
+    func updateContact(contact: Contact) -> Bool
+    func getContacts(contactKey: String, contactValue: String) -> [Contact]?
 }
 
 class CoreDataManager: PersistenStoreProtocol {
     
     // MARK: CoreData Entities
     
-    let entity_Contacts = "Contact"
+    let entityContacts = "Contact"
     
     
     // MARK: - Core Data stack
@@ -94,21 +94,21 @@ class CoreDataManager: PersistenStoreProtocol {
         
         let id = newContactId()
         
-        let contact = NSEntityDescription.insertNewObjectForEntityForName(entity_Contacts, inManagedObjectContext: managedObjectContext) as! Contact
+        let contact = NSEntityDescription.insertNewObjectForEntityForName(entityContacts, inManagedObjectContext: managedObjectContext) as? Contact
         
-        contact.contactID = id
+        contact?.contactID = id
         
-        return contact
+        return contact!
     }
     
     private func newContactId() -> Int {
-        let request = NSFetchRequest(entityName: entity_Contacts)
+        let request = NSFetchRequest(entityName: entityContacts)
         
         request.predicate = NSPredicate(format: "contactID = max:(contactID)")
 
         do {
             let response = try managedObjectContext.executeFetchRequest(request) as? [Contact]
-            return (response?.count > 0 ? response![0].contactID : 0) + 1
+            return (response?.isEmpty == false ? response![0].contactID : 0) + 1
         } catch {
             return -1
         }
@@ -116,7 +116,7 @@ class CoreDataManager: PersistenStoreProtocol {
     
     func getAllContacts() -> [Contact]? {
         
-        let request = NSFetchRequest(entityName: entity_Contacts)
+        let request = NSFetchRequest(entityName: entityContacts)
         
         do {
             return try managedObjectContext.executeFetchRequest(request) as? [Contact]
@@ -125,12 +125,12 @@ class CoreDataManager: PersistenStoreProtocol {
         }
     }
     
-    func getContactWithID(contactID:Int) -> Contact? {
-        let request = NSFetchRequest(entityName: entity_Contacts)
+    func getContactWithID(contactID: Int) -> Contact? {
+        let request = NSFetchRequest(entityName: entityContacts)
         
         request.predicate = NSPredicate(format: "contactID = %i", contactID)
         
-        var allContacts:[Contact]?
+        var allContacts: [Contact]?
         
         do {
             allContacts = try managedObjectContext.executeFetchRequest(request) as? [Contact]
@@ -138,13 +138,13 @@ class CoreDataManager: PersistenStoreProtocol {
             return nil
         }
         
-        return allContacts?.count > 0 ? allContacts![0] : nil
+        return (allContacts?.isEmpty == false) ? allContacts![0] : nil
     }
     
-    func updateContact(contact:Contact) -> Bool {
+    func updateContact(contact: Contact) -> Bool {
         if let contactToUpdate = getContactWithID(contact.contactID) {
             
-            contactToUpdate.nickname = contact.nickname;
+            contactToUpdate.nickname = contact.nickname
             contactToUpdate.phoneNumber = contact.phoneNumber
             contactToUpdate.avatarURL = contact.avatarURL
             
@@ -156,20 +156,19 @@ class CoreDataManager: PersistenStoreProtocol {
         }
     }
     
-    func getContacts(contactKey:String, contactValue:String) -> [Contact]? {
-        let request = NSFetchRequest(entityName: entity_Contacts)
+    func getContacts(contactKey: String, contactValue: String) -> [Contact]? {
+        let request = NSFetchRequest(entityName: entityContacts)
         
         request.predicate = NSPredicate(format: "%@==%@", contactKey, contactValue)
         
-        var allContacts:[Contact]?
+        var allContacts: [Contact]?
         
         do {
-            allContacts = try managedObjectContext.executeFetchRequest(request) as! [Contact]
+            allContacts = try managedObjectContext.executeFetchRequest(request) as? [Contact]
         } catch {
             return nil
         }
         
         return allContacts
     }
-    
 }

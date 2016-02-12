@@ -17,15 +17,14 @@ class ContactCell: UITableViewCell {
             
             if let imageUrl = viewModel?.contactAvatar {
                 avatarIV?.imageFromUrl(imageUrl)
-            }
-            else {
+            } else {
                 avatarIV?.image = UIImage(named: "noUser")
             }
         }
     }
     
     
-    @IBOutlet weak var nicknameLabel:UILabel?
-    @IBOutlet weak var phoneNumberLabel:UILabel?
-    @IBOutlet weak var avatarIV:UIImageView?
+    @IBOutlet weak var nicknameLabel: UILabel?
+    @IBOutlet weak var phoneNumberLabel: UILabel?
+    @IBOutlet weak var avatarIV: UIImageView?
 }

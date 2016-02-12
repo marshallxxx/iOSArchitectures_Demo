@@ -18,9 +18,9 @@ class ContactDetailsInteractor: NSObject, ContactDetailsInteractorInput {
         super.init()
     }
     
-    func saveContact(contactID: Int, nickname:String?, phone: String?, avatarUrl: String?) {
+    func saveContact(contactID: Int, nickname: String?, phone: String?, avatarUrl: String?) {
         
-        var editingContact:ContactVIPER?
+        var editingContact: ContactVIPER?
         
         if contactID > 0 {
             editingContact = externalServices.persistentManager.getContactWithID(contactID) as? ContactVIPER
@@ -45,7 +45,7 @@ class ContactDetailsInteractor: NSObject, ContactDetailsInteractorInput {
         }
     }
     
-    func retrieveContactDetails(contactID:Int) {
+    func retrieveContactDetails(contactID: Int) {
         
         var displayData: ContactDetailsDisplayData?
         

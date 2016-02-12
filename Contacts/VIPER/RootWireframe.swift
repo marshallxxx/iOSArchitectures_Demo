@@ -9,18 +9,18 @@
 import UIKit
 
 @objc protocol InitialWireframeProtocol {
-    func presentInWindow(window:UIWindow)
+    func presentInWindow(window: UIWindow)
 }
 
 class RootWireframe {
     
-    func showRootViewController(viewController:UIViewController, window:UIWindow) {
+    func showRootViewController(viewController: UIViewController, window: UIWindow) {
         let navigationController = navigationControllerFromWindow(window)
         navigationController.viewControllers = [ viewController ]
     }
     
     func navigationControllerFromWindow(window: UIWindow) -> UINavigationController {
-        return window.rootViewController! as! UINavigationController
+        return window.rootViewController as? UINavigationController
     }
     
 }

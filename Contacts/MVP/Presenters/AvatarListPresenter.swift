@@ -9,16 +9,16 @@
 import UIKit
 
 protocol AvatarListPresenterProtocol: class {
-    init(view:AvatarListViewProtocol)
+    init(view: AvatarListViewProtocol)
     
     func numberOfAvatars() -> Int
-    func presentContact(index:Int)
-    func getAvatarUrlAtIndex(index:Int) -> String?
+    func presentContact(index: Int)
+    func getAvatarUrlAtIndex(index: Int) -> String?
 }
 
 class AvatarListPresenter: NSObject, AvatarListPresenterProtocol {
-    unowned var view:AvatarListViewProtocol
-    var avatars:[Avatar]?
+    unowned var view: AvatarListViewProtocol
+    var avatars: [Avatar]?
     
     required init(view: AvatarListViewProtocol) {
         self.view = view
@@ -39,12 +39,12 @@ class AvatarListPresenter: NSObject, AvatarListPresenterProtocol {
         return avatars?.count ?? 0
     }
     
-    func presentContact(index:Int) {
+    func presentContact(index: Int) {
         let avatar = avatars![index]
         view.updateCell(avatar.title, avatarURL: avatar.url)
     }
     
-    func getAvatarUrlAtIndex(index:Int) -> String? {
+    func getAvatarUrlAtIndex(index: Int) -> String? {
         return avatars?[index].url
     }
     

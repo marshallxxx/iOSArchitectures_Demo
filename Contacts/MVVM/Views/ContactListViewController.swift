@@ -29,14 +29,14 @@ class ContactListViewController: UITableViewController {
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch (segue.identifier!) {
+        switch segue.identifier! {
         case Constants.Segue_ToDetails:
             if let destination = segue.destinationViewController as? ContactDetailsViewController {
                 destination.viewModel = self.viewModel.contactDetailViewModel
                 destination.isEditable = true
             }
-            break;
-        default: break;
+            break
+        default: break
         }
     }
 }
@@ -50,8 +50,8 @@ extension ContactListViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
-        cell.viewModel = viewModel.cellModelAtIndex(indexPath.row)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as? ContactCell
+        cell?.viewModel = viewModel.cellModelAtIndex(indexPath.row)
         
         return cell
     }

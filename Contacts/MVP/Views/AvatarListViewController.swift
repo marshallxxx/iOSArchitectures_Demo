@@ -10,7 +10,7 @@ import UIKit
 
 protocol AvatarListViewProtocol: class {
     func dataReloaded()
-    func updateCell(avatarTitle:String?, avatarURL:String?)
+    func updateCell(avatarTitle: String?, avatarURL: String?)
 }
 
 class AvatarListViewController: UICollectionViewController, AvatarListViewProtocol {
@@ -27,7 +27,7 @@ class AvatarListViewController: UICollectionViewController, AvatarListViewProtoc
 
         presenter = AvatarListPresenter(view: self)
         
-        let leftItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "goBack:")
+        let leftItem = UIBarButtonItem(title: "Cancel", style: .Done, target: self, action: "goBack:")
         navigationItem.leftBarButtonItem = leftItem
     }
 
@@ -40,7 +40,7 @@ class AvatarListViewController: UICollectionViewController, AvatarListViewProtoc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         switch segue.identifier! {
-        case Constants.Segue_ToEditContact:
+        case Constants.SegueToEditContact:
             if let destinationVC = segue.destinationViewController as? ContactDetailsViewController {
                 destinationVC.presenter!.setupAvatarURL(presenter!.getAvatarUrlAtIndex(selectedCellIndex))
             }
@@ -67,7 +67,7 @@ class AvatarListViewController: UICollectionViewController, AvatarListViewProtoc
         return currentCell!
     }
     
-    func updateCell(avatarTitle:String?, avatarURL:String?) {
+    func updateCell(avatarTitle: String?, avatarURL: String?) {
         
         currentCell!.avatarTitle?.text = avatarTitle
         
@@ -80,7 +80,6 @@ class AvatarListViewController: UICollectionViewController, AvatarListViewProtoc
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedCellIndex = indexPath.item
-        performSegueWithIdentifier(Constants.Segue_ToEditContact, sender: self)
+        performSegueWithIdentifier(Constants.SegueToEditContact, sender: self)
     }
-    
 }

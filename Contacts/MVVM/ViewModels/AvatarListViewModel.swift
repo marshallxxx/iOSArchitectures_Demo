@@ -64,5 +64,4 @@ class AvatarListViewModel: AvatarListViewModelProtocol {
     func getSelectedAvatar() -> Avatar {
         return selectedAvatar!
     }
-
 }

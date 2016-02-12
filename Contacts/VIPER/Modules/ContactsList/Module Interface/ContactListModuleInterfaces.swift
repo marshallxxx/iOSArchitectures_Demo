@@ -10,16 +10,16 @@ import Foundation
 
 @objc protocol ContactsListPresenterInterface: class {
     weak var view: ContactsListViewInterface? { get set }
-    weak var wireframe:ContactsListWireframe? { get set }
+    weak var wireframe: ContactsListWireframe? { get set }
     
     func addNewContact()
     func refreshData()
     func numberOfSections() -> Int
     func sectionsName() -> [String]
-    func sectionName(section:Int) -> String
+    func sectionName(section: Int) -> String
     func numberOfRowsInSection(section: Int) -> Int
-    func setupContactInfo(section:Int, index:Int, setup:(name:String?, phone:String?, avatarURL:String?) -> ())
-    func editContact(section:Int, index: Int)
+    func setupContactInfo(section: Int, index: Int, setup:(name: String?, phone: String?, avatarURL: String?) -> ())
+    func editContact(section: Int, index: Int)
 }
 
 @objc protocol ContactsListViewInterface: class {

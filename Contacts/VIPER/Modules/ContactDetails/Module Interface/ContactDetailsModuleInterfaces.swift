@@ -21,20 +21,20 @@ import Foundation
     var eventHandler: ContactDetailsPresenterInterface? { get set }
     
     func getContactNickname() -> String?
-    func setContactNickname(value:String?)
+    func setContactNickname(value: String?)
     func getContactPhone() -> String?
-    func setContactPhone(value:String?)
+    func setContactPhone(value: String?)
     func getAvatarUrl() -> String?
-    func setAvatarUrl(value:String?)
+    func setAvatarUrl(value: String?)
 }
 
 @objc protocol ContactDetailsInteractorInput {
-    func saveContact(contactID: Int, nickname:String?, phone: String?, avatarUrl: String?)
-    func retrieveContactDetails(contactID:Int)
+    func saveContact(contactID: Int, nickname: String?, phone: String?, avatarUrl: String?)
+    func retrieveContactDetails(contactID: Int)
 }
 
 @objc protocol ContactDetailsInteractorOutput {
-    func contactDetailsRetrieved(contactDetails:ContactDetailsDisplayData?)
+    func contactDetailsRetrieved(contactDetails: ContactDetailsDisplayData?)
 }
 
 @objc protocol ContactDetailsModuleDelegate {

@@ -18,7 +18,7 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewInterfac
     
     private var avatarURL: String?
     
-    private var avatarUrl:String?
+    private var avatarUrl: String?
     
     // MARK: Lifecycle
     
@@ -46,11 +46,11 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewInterfac
         return phoneNumberTF?.text
     }
     
-    func setContactNickname(value:String?) {
+    func setContactNickname(value: String?) {
         nicknameTF?.text = value
     }
     
-    func setContactPhone(value:String?) {
+    func setContactPhone(value: String?) {
         phoneNumberTF?.text = value
     }
     
@@ -58,7 +58,7 @@ class ContactDetailsViewController: UIViewController, ContactDetailsViewInterfac
         return avatarURL
     }
     
-    func setAvatarUrl(value:String?) {
+    func setAvatarUrl(value: String?) {
         avatarURL = value
         
         if let url = avatarURL {

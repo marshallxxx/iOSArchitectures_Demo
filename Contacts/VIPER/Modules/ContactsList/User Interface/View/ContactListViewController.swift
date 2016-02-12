@@ -31,7 +31,7 @@ class ContactListViewController: UITableViewController, ContactsListViewInterfac
     
     // MARK: IBActions
     
-    @IBAction func newContactButtonPressed(sender:AnyObject) {
+    @IBAction func newContactButtonPressed(sender: AnyObject) {
         eventHandler?.addNewContact()
     }
     
@@ -50,17 +50,17 @@ class ContactListViewController: UITableViewController, ContactsListViewInterfac
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell") as! ContactCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell") as? ContactCell
         
         eventHandler!.setupContactInfo(indexPath.section, index: indexPath.row) { (name, phone, avatarURL) -> () in
             
-            cell.nicknameLabel?.text = name
-            cell.phoneLabel?.text = phone
+            cell?.nicknameLabel?.text = name
+            cell?.phoneLabel?.text = phone
             
             if let url = avatarURL {
-                cell.avatarIV?.imageFromUrl(url)
+                cell?.avatarIV?.imageFromUrl(url)
             } else {
-                cell.avatarIV?.image = UIImage(named: "noUser")
+                cell?.avatarIV?.image = UIImage(named: "noUser")
             }
 
         }

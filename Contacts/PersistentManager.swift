@@ -22,9 +22,9 @@ protocol PersistentManagerProtocol {
     
     func getAllPersistentContacts() -> [ReturnType]?
     func getContactWithID(contactID: Int) -> ReturnType?
-    func addToPersistentContact(newObject:ReturnType) -> Bool
-    func removePersistentObject(objectToRemove:ReturnType) -> Bool
-    func updateContact(contact:ReturnType) -> Bool
+    func addToPersistentContact(newObject: ReturnType) -> Bool
+    func removePersistentObject(objectToRemove: ReturnType) -> Bool
+    func updateContact(contact: ReturnType) -> Bool
 }
 
 class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
@@ -73,11 +73,11 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         return nil
     }
     
-    func addToPersistentContact(newObject:ReturnType) -> Bool {
+    func addToPersistentContact(newObject: ReturnType) -> Bool {
         let matchContacts = persistentManager.getContacts("phoneNumber", contactValue: newObject.phoneNumber ?? "-1")
         
         if let contacts = matchContacts where
-            contacts.count == 0 {
+            contacts.isEmpty == true {
             let contact = persistentManager.newContact()
             
             contact.phoneNumber = newObject.phoneNumber
@@ -92,7 +92,7 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         }
     }
     
-    func updateContact(contact:ReturnType) -> Bool {
+    func updateContact(contact: ReturnType) -> Bool {
         if let persistentContact = persistentManager.getContactWithID(contact.contactID) {
             
             persistentContact.nickname = contact.nickname
@@ -106,8 +106,7 @@ class PersistentManager<T: ModelConvertorProtocol>: PersistentManagerProtocol {
         }
     }
     
-    func removePersistentObject(objectToRemove:ReturnType) -> Bool {
+    func removePersistentObject(objectToRemove: ReturnType) -> Bool {
         return persistentManager.removeContactWithID(objectToRemove.contactID )
     }
-    
 }

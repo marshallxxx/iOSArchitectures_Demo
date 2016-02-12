@@ -42,9 +42,9 @@ class ContactDetailsViewController: UIViewController {
     
     
     @IBAction func saveNewContact(sender: AnyObject) {
-        if let name = contactName?.text, let phone = contactPhone?.text{
+        if let name = contactName?.text, let phone = contactPhone?.text {
             
-            var result:Bool
+            var result: Bool
             
             if isEditable {
                 result = viewModel!.updateContact(name, phone: phone, avatar: viewModel?.contactAvatar.value)

@@ -28,22 +28,22 @@ class ContactsListInteractor: NSObject, ContactListInteractorInput {
     }
     
     func findAllContacts() {
-        let contacts = externalServices.persistentManager.getAllPersistentContacts()! as! [ContactVIPER]
+        let contacts = externalServices.persistentManager.getAllPersistentContacts()! as? [ContactVIPER]
         output!.foundAllContacts(getSectionsData(contacts))
     }
     
-    func getSectionsData(contacts:[ContactVIPER]) -> AllContactsSections {
+    func getSectionsData(contacts: [ContactVIPER]) -> AllContactsSections {
         
         let sortedArray = contacts.sort{ $0.nickname < $1.nickname }
-        var sections:[ContactSection] = []
+        var sections: [ContactSection] = []
         
-        func appendSection(contacts:[ContactDisplayData], name: String) {
+        func appendSection(contacts: [ContactDisplayData], name: String) {
             let section = ContactSection(name: name)
             section.contacts = contacts
             sections.append(section)
         }
         
-        var letter:String = ""
+        var letter: String = ""
         var letterIndex = 0
         for (index, contact) in sortedArray.enumerate() {
             
@@ -64,7 +64,7 @@ class ContactsListInteractor: NSObject, ContactListInteractorInput {
         return AllContactsSections(sections:sections)
     }
     
-    func convertToDisplayData(contacts:[ContactVIPER]) -> [ContactDisplayData] {
+    func convertToDisplayData(contacts: [ContactVIPER]) -> [ContactDisplayData] {
         return contacts.map({ (contact) -> ContactDisplayData in
             return contact.toContactDisplayData()
         })

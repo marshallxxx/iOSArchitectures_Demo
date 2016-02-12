@@ -13,12 +13,12 @@ class AvatarChooserPresenter: NSObject, AvatarChooserPresenterInterface, AvatarC
     weak var view: AvatarChooserViewInterface?
     weak var wireframe: AvatarChooserWireframe?
     
-    var interactor:AvatarChooserInteractorInput
-    var data:[AvatarDisplayData]?
+    var interactor: AvatarChooserInteractorInput
+    var data: [AvatarDisplayData]?
     
     var moduleDelegate: AvatarChooserModuleDelegate?
     
-    init(interactor:AvatarChooserInteractorInput) {
+    init(interactor: AvatarChooserInteractorInput) {
         self.interactor = interactor
         super.init()
     }
@@ -33,18 +33,18 @@ class AvatarChooserPresenter: NSObject, AvatarChooserPresenterInterface, AvatarC
         return data?.count ?? 0
     }
     
-    func setupAvatarInfo(index:Int, setup:(name:String?, avatarURL:String?) -> ()) {
+    func setupAvatarInfo(index: Int, setup:(name: String?, avatarURL: String?) -> ()) {
         setup(name: data?[index].avatarName, avatarURL: data?[index].avatarURL)
     }
 
-    func chooseAvatar(index:Int) {
+    func chooseAvatar(index: Int) {
         wireframe!.dismissViewController()
         moduleDelegate?.didChooseAvatar(data?[index].avatarURL)
     }
     
     // MARK: AvatarChooserInteractorOutput
     
-    func foundAvailableAvatars(avatars:[Avatar]) {
+    func foundAvailableAvatars(avatars: [Avatar]) {
         data = avatars.map { (avatar) -> AvatarDisplayData in
             let displayData = AvatarDisplayData()
             

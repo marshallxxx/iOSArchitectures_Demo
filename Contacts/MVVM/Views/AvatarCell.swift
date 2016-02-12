@@ -16,8 +16,7 @@ class AvatarCell: UICollectionViewCell {
             
             if let imageUrl = viewModel?.avatarUrl {
                 avatarImage?.imageFromUrl(imageUrl)
-            }
-            else {
+            } else {
                 avatarImage?.image = UIImage(named: "noUser")
             }
         }

@@ -16,7 +16,7 @@ class AvatarListViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let leftItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "goBack:")
+        let leftItem = UIBarButtonItem(title: "Cancel", style: .Done, target: self, action: "goBack:")
         navigationItem.leftBarButtonItem = leftItem
         
         viewModel.getAvatars().startWithNext { _ -> () in
@@ -48,9 +48,9 @@ extension AvatarListViewController {
     
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AvatarCell", forIndexPath: indexPath) as! AvatarCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AvatarCell", forIndexPath: indexPath) as? AvatarCell
         
-        cell.viewModel = viewModel.avatartAtIndex(indexPath.item)
+        cell?.viewModel = viewModel.avatartAtIndex(indexPath.item)
         
         return cell
     }
@@ -59,7 +59,5 @@ extension AvatarListViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         viewModel.selectWithIndex(indexPath.item)
         performSegueWithIdentifier(Constants.Segue_ToEditContact, sender: self)
-    }
-    
+    }    
 }
-

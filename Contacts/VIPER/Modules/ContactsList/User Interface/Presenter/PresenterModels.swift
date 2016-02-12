@@ -12,7 +12,7 @@ import Foundation
     
     var allSections: [ContactSection]
     
-    init(sections:[ContactSection]) {
+    init(sections: [ContactSection]) {
         allSections = sections
         super.init()
     }

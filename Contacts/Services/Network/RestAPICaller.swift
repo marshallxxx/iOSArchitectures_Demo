@@ -15,19 +15,19 @@ import AFNetworking
      *
      * @param url String?
      */
-    func doGet(url:String, callback:(NSError?, Dictionary<String, AnyObject>?) -> ()) -> NSURLSessionDataTask
+    func doGet(url: String, callback: (NSError?, Dictionary<String, AnyObject>?) -> ()) -> NSURLSessionDataTask
     /**
      * Do an http POST request to url specified
      *
      * @param url String?
      * @param data NSData? http body
      */
-    optional func doPost(url:String, data:NSData?) -> String
+    optional func doPost(url: String, data: NSData?) -> String
 }
 
 class RestAPICaller: NSObject, RestAPIProtocol {
     
-    private var sessionManager:AFHTTPSessionManager
+    private var sessionManager: AFHTTPSessionManager
     
     override init() {
         sessionManager = AFHTTPSessionManager()
@@ -35,8 +35,8 @@ class RestAPICaller: NSObject, RestAPIProtocol {
     }
     
     // MARK: RestAPIProtocol
-    func doGet(url:String, callback:(NSError?, Dictionary<String, AnyObject>?) -> ()) -> NSURLSessionDataTask {
-        var error:NSError?
+    func doGet(url: String, callback: (NSError?, Dictionary<String, AnyObject>?) -> ()) -> NSURLSessionDataTask {
+        var error: NSError?
         let request = AFJSONRequestSerializer().requestWithMethod("GET", URLString: url, parameters: nil, error: &error)
         
         let task = sessionManager.dataTaskWithRequest(request) { (response, responseObject, error) -> Void in

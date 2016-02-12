@@ -9,48 +9,48 @@
 import UIKit
 
 protocol ContactDetailsPresenterProtocol: class {
-    init(view:ContactDetailsViewProtocol)
+    init(view: ContactDetailsViewProtocol)
 
     var currentContact: ContactMVP { get set }
     
     func getContactAvatarURL() -> String?
-    func setupAvatarURL(url:String?)
+    func setupAvatarURL(url: String?)
     func getContactNickname() -> String?
-    func setupContactNickname(nickname:String?)
+    func setupContactNickname(nickname: String?)
     func getContactPhoneNumber() -> String?
-    func setupContactPhoneNumber(phoneNumber:String?)
+    func setupContactPhoneNumber(phoneNumber: String?)
     func saveContact()
 }
 
 class ContactDetailsPresenter: NSObject, ContactDetailsPresenterProtocol {
 
-    unowned var view:ContactDetailsViewProtocol
+    unowned var view: ContactDetailsViewProtocol
     
-    private var isEditable:Bool = false
+    private var isEditable: Bool = false
     
-    var _currentContact: ContactMVP?
+    var currentContactTemp: ContactMVP?
     var currentContact: ContactMVP {
         get {
-            if _currentContact == nil {
-                _currentContact = ContactMVP()
+            if currentContactTemp == nil {
+                currentContactTemp = ContactMVP()
                 isEditable = false
             }
-            return _currentContact!
+            return currentContactTemp!
         }
         set {
             isEditable = true
-            _currentContact = newValue
+            currentContactTemp = newValue
         }
     }
     
-    required init(view:ContactDetailsViewProtocol) {
+    required init(view: ContactDetailsViewProtocol) {
         self.view = view
         
         super.init()
     }
     
     // MARK: ContactDetailsPresenterProtocol
-    func setupAvatarURL(url:String?) {
+    func setupAvatarURL(url: String?) {
         currentContact.avatarURL = url
     }
     
@@ -58,7 +58,7 @@ class ContactDetailsPresenter: NSObject, ContactDetailsPresenterProtocol {
         return currentContact.avatarURL
     }
     
-    func setupContactNickname(nickname:String?) {
+    func setupContactNickname(nickname: String?) {
         currentContact.nickname = nickname
     }
     
@@ -66,7 +66,7 @@ class ContactDetailsPresenter: NSObject, ContactDetailsPresenterProtocol {
         return currentContact.nickname
     }
     
-    func setupContactPhoneNumber(phoneNumber:String?) {
+    func setupContactPhoneNumber(phoneNumber: String?) {
         currentContact.phoneNumber = phoneNumber
     }
     
@@ -76,7 +76,7 @@ class ContactDetailsPresenter: NSObject, ContactDetailsPresenterProtocol {
     
     func saveContact() {
         
-        var result:Bool
+        var result: Bool
         
         if isEditable {
             result = ExternalConnector.sharedManager().persistentManager.updateContact(currentContact)

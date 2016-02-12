@@ -14,7 +14,7 @@ class ContactDetailsViewController: UIViewController {
     @IBOutlet weak var contactName: UITextField?
     @IBOutlet weak var contactPhone: UITextField?
 
-    var contact:ContactMVC?
+    var contact: ContactMVC?
     var isEditable: Bool = false
     
     
@@ -39,15 +39,15 @@ class ContactDetailsViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func pickContactAvatart(sender: AnyObject) {
-        performSegueWithIdentifier(Constants.Segue_ToAvatars, sender: self)
+        performSegueWithIdentifier(Constants.SegueToAvatars, sender: self)
     }
     
     @IBAction func saveNewContact(sender: AnyObject) {
-        if let name = contactName?.text, let phone = contactPhone?.text{
+        if let name = contactName?.text, let phone = contactPhone?.text {
             contact!.nickname = name
             contact!.phoneNumber = phone
             
-            var result:Bool
+            var result: Bool
             
             if isEditable {
                 result = ExternalConnector.sharedManager().persistentManager.updateContact(contact!)

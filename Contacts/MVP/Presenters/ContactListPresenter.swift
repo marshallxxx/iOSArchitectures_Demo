@@ -9,21 +9,21 @@
 import UIKit
 
 protocol ContactListPresenterProtocol: class {
-    init(view:ContactListViewProtocol)
+    init(view: ContactListViewProtocol)
     
     func refreshContent()
     func totalContactsNumber() -> Int
-    func presentContact(index:Int)
+    func presentContact(index: Int)
     func contactAtIndex(index: Int) -> ContactMVP
     func removeContact(index: Int)
 }
 
 class ContactListPresenter: NSObject, ContactListPresenterProtocol {
     
-    unowned let view:ContactListViewProtocol
-    var allContacts:[ContactMVP]?
+    unowned let view: ContactListViewProtocol
+    var allContacts: [ContactMVP]?
     
-    required init(view:ContactListViewProtocol) {
+    required init(view: ContactListViewProtocol) {
         self.view = view
         super.init()
 
@@ -40,7 +40,7 @@ class ContactListPresenter: NSObject, ContactListPresenterProtocol {
         return allContacts?.count ?? 0
     }
     
-    func presentContact(index:Int) {
+    func presentContact(index: Int) {
         if let contact = allContacts?[index] {
             view.updateCell(contact.nickname, phoneNumber: contact.phoneNumber, avatarURL: contact.avatarURL)
         }

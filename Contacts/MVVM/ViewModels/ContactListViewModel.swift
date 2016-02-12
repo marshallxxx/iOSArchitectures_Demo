@@ -30,7 +30,7 @@ class ContactListViewModel: ContactListViewModelProtocol {
     }
     
     func refreshContent() {
-        allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as! [ContactMVVM]
+        allContacts = ExternalConnector.sharedManager().persistentManager.getAllPersistentContacts() as? [ContactMVVM]
     }
     
     func getAllContactsCount() -> Int {

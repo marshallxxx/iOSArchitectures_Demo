@@ -18,11 +18,11 @@ class NetworkService: NetworkServiceProtocol {
     
     private let serviceEndpoint = "http://private-3e309-contacts29.apiary-mock.com"
     
-    private let url_contacts = "contacts"
+    private let urlContacts = "contacts"
     
-    private let responseKey_results = "results"
+    private let responseKeyResults = "results"
     
-    private var restCaller:RestAPIProtocol?
+    private var restCaller: RestAPIProtocol?
     
     init(rest: RestAPIProtocol) {
         restCaller = rest
@@ -33,13 +33,13 @@ class NetworkService: NetworkServiceProtocol {
     
     func getAvatarList(callback: (NSError?, [Avatar]?) -> ()) {
         
-        restCaller?.doGet("\(serviceEndpoint)/\(url_contacts)", callback: { (error, response) -> () in
+        restCaller?.doGet("\(serviceEndpoint)/\(urlContacts)", callback: { (error, response) -> () in
             
             weak var wefl = self
             if let err = error {
                 callback(err, nil)
             } else {
-                let avatarsArray = response?[(wefl!.responseKey_results)] as? [AnyObject]
+                let avatarsArray = response?[(wefl!.responseKeyResults)] as? [AnyObject]
                 
                 let avatars = Avatar.arrayOfModelsFromDictionaries(avatarsArray) as? [Avatar]
                 

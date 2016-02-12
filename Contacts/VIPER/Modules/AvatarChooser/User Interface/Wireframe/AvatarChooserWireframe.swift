@@ -12,7 +12,7 @@ class AvatarChooserWireframe: NSObject {
 
     var presenter: AvatarChooserPresenterInterface
     
-    init(presenter:AvatarChooserPresenterInterface) {
+    init(presenter: AvatarChooserPresenterInterface) {
         self.presenter = presenter
         super.init()
     }
@@ -27,7 +27,7 @@ class AvatarChooserWireframe: NSObject {
     }
     
     func dismissViewController() {
-        (presenter.view as! UIViewController).navigationController!.popViewControllerAnimated(true)
+        (presenter.view as? UIViewController).navigationController!.popViewControllerAnimated(true)
     }
     
 }

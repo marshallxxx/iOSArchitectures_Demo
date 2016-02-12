@@ -11,7 +11,7 @@ import UIKit
 class ContactsListWireframe: NSObject, InitialWireframeProtocol {
 
     var rootWireframe: RootWireframe
-    var contactDetailsWireframe:ContactDetailsWireframe?
+    var contactDetailsWireframe: ContactDetailsWireframe?
     
     var presenter: ContactsListPresenterInterface
     
@@ -21,7 +21,7 @@ class ContactsListWireframe: NSObject, InitialWireframeProtocol {
         super.init()
     }
     
-    func presentInWindow(window:UIWindow) {
+    func presentInWindow(window: UIWindow) {
         let view = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("ContactListVC")
         presenter.view = view as? ContactsListViewInterface
         presenter.view!.eventHandler = presenter
@@ -29,7 +29,7 @@ class ContactsListWireframe: NSObject, InitialWireframeProtocol {
     }
     
     func presentContactDetails(view: AnyObject) {
-        contactDetailsWireframe!.presentContactDetailsViewFromViewController(view as! UIViewController)
+        contactDetailsWireframe!.presentContactDetailsViewFromViewController(view as? UIViewController)
     }
     
 }

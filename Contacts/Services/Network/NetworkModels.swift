@@ -10,7 +10,6 @@ import Foundation
 import JSONModel
 
 class Avatar: JSONModel {
-    var title: String?
-    var url: String?
+    var title: String = ""
+    var url: String = ""
 }
-

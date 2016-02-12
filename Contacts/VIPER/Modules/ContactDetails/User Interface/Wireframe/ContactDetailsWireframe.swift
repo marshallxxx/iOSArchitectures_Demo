@@ -13,7 +13,7 @@ class ContactDetailsWireframe: NSObject {
     var presenter: ContactDetailsPresenterInterface
     var avatarChooserWireframe: AvatarChooserWireframe?
     
-    @objc init(presenter:ContactDetailsPresenterInterface) {
+    @objc init(presenter: ContactDetailsPresenterInterface) {
         self.presenter = presenter
         super.init()
     }
@@ -27,11 +27,11 @@ class ContactDetailsWireframe: NSObject {
     }
     
     func presentAvatarChooser(view: AnyObject) {
-        avatarChooserWireframe!.presentAvatarChooserViewFromViewController(view as! UIViewController)
+        avatarChooserWireframe!.presentAvatarChooserViewFromViewController(view as? UIViewController)
     }
     
     func dismissViewController() {
-        (presenter.view as! UIViewController).navigationController!.popViewControllerAnimated(true)
+        (presenter.view as? UIViewController).navigationController!.popViewControllerAnimated(true)
     }
     
 }

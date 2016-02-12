@@ -14,7 +14,7 @@ import CoreData
 
 extension Contact {
 
-    @NSManaged var contactID:Int
+    @NSManaged var contactID: Int
     @NSManaged var phoneNumber: String?
     @NSManaged var avatarURL: String?
     @NSManaged var nickname: String?

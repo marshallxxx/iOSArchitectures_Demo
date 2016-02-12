@@ -14,9 +14,9 @@ protocol ContactListViewProtocol: class {
 
 class ContactListViewController: UITableViewController, ContactListViewProtocol {
     
-    var presenter:ContactListPresenterProtocol?
+    var presenter: ContactListPresenterProtocol?
     private var currentCell: ContactCell?
-    var selectedRow:Int = -1
+    var selectedRow: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +34,10 @@ class ContactListViewController: UITableViewController, ContactListViewProtocol 
     // MARK: IBActions
     
     @IBAction func showAddNewContact(sender: AnyObject) {
-        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
+        performSegueWithIdentifier(Constants.SegueToDetails, sender: self)
     }
     
-    func updateCell(nickname:String?, phoneNumber:String?, avatarURL:String?) {
+    func updateCell(nickname: String?, phoneNumber: String?, avatarURL: String?) {
         currentCell?.nicknameLabel?.text = nickname
         currentCell?.phoneNumberLabel?.text = phoneNumber
         
@@ -50,8 +50,8 @@ class ContactListViewController: UITableViewController, ContactListViewProtocol 
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch (segue.identifier!) {
-        case Constants.Segue_ToDetails:
+        switch segue.identifier! {
+        case Constants.SegueToDetails:
             if let destination = segue.destinationViewController as? ContactDetailsViewController {
                 destination.presenter!.currentContact = presenter!.contactAtIndex(selectedRow)
             }
@@ -68,7 +68,7 @@ extension ContactListViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        currentCell = tableView.dequeueReusableCellWithIdentifier(Constants.Cell_ContactCell) as? ContactCell
+        currentCell = tableView.dequeueReusableCellWithIdentifier(Constants.CellContactCell) as? ContactCell
         
         presenter!.presentContact(indexPath.row)
         
@@ -93,6 +93,6 @@ extension ContactListViewController {
 extension ContactListViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedRow = indexPath.row
-        performSegueWithIdentifier(Constants.Segue_ToDetails, sender: self)
+        performSegueWithIdentifier(Constants.SegueToDetails, sender: self)
     }
 }

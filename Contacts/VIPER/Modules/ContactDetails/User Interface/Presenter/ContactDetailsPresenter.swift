@@ -12,11 +12,11 @@ class ContactDetailsPresenter: NSObject, ContactDetailsPresenterInterface, Conta
     
     weak var view: ContactDetailsViewInterface?
     weak var wireframe: ContactDetailsWireframe?
-    var interactor:ContactDetailsInteractorInput
+    var interactor: ContactDetailsInteractorInput
     
     weak var moduleDelegate: ContactDetailsModuleDelegate?
     
-    var displayData:ContactDetailsDisplayData?
+    var displayData: ContactDetailsDisplayData?
     
     init(interactor: ContactDetailsInteractorInput) {
         self.interactor = interactor
@@ -43,7 +43,7 @@ class ContactDetailsPresenter: NSObject, ContactDetailsPresenterInterface, Conta
         }
     }
     
-    func contactDetailsRetrieved(contactDetails:ContactDetailsDisplayData?) {
+    func contactDetailsRetrieved(contactDetails: ContactDetailsDisplayData?) {
         view?.setContactNickname(contactDetails?.nickname)
         view?.setContactPhone(contactDetails?.phone)
         view?.setAvatarUrl(contactDetails?.avatarUrl)

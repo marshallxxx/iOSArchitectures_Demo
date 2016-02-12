@@ -9,7 +9,7 @@
 import UIKit
 
 class ContactCell: UITableViewCell {
-    @IBOutlet weak var nicknameLabel:UILabel?
-    @IBOutlet weak var phoneNumberLabel:UILabel?
-    @IBOutlet weak var avatarIV:UIImageView?
+    @IBOutlet weak var nicknameLabel: UILabel?
+    @IBOutlet weak var phoneNumberLabel: UILabel?
+    @IBOutlet weak var avatarIV: UIImageView?
 }

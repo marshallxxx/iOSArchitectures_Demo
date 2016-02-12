@@ -13,7 +13,7 @@ class ServicesManager<ContactsModelType: ModelConvertorProtocol> {
     var persistentManager: PersistentManager<ContactsModelType>
     var networkManager: NetworkServiceProtocol
     
-    init(persistentSolution:PersistentManager<ContactsModelType>, networkServiceSolution: NetworkServiceProtocol) {
+    init(persistentSolution: PersistentManager<ContactsModelType>, networkServiceSolution: NetworkServiceProtocol) {
         persistentManager = persistentSolution
         networkManager = networkServiceSolution
     }

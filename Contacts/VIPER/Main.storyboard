@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="251" tableViewCell="uQt-11-XNK" id="ubE-WB-fdY">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBD-gL-9XD">

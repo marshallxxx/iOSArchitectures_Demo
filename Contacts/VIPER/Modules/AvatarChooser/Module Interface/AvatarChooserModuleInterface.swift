@@ -21,8 +21,8 @@ import Foundation
     
     func refreshData()
     func numberOfAvatars() -> Int
-    func setupAvatarInfo(index:Int, setup:(name:String?, avatarURL:String?) -> ())
-    func chooseAvatar(index:Int)
+    func setupAvatarInfo(index: Int, setup:(name: String?, avatarURL: String?) -> ())
+    func chooseAvatar(index: Int)
 }
 
 @objc protocol AvatarChooserInteractorInput {
@@ -30,7 +30,7 @@ import Foundation
 }
 
 @objc protocol AvatarChooserInteractorOutput {
-    func foundAvailableAvatars(avatars:[Avatar])
+    func foundAvailableAvatars(avatars: [Avatar])
     func failedToLoadAvailableAvatars()
 }
 

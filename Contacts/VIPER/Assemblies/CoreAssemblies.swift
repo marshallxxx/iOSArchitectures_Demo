@@ -11,7 +11,7 @@ import Typhoon
 
 class CoreAssemblies: TyphoonAssembly {
 
-    var contactListAssembly:ContactListAssembly?
+    var contactListAssembly: ContactListAssembly?
     
     dynamic func appDelegate() -> AnyObject? {
         return TyphoonDefinition.withClass(AppDelegate.self) { [unowned self] (definition) -> Void in
@@ -37,7 +37,7 @@ class CoreAssemblies: TyphoonAssembly {
 
 class ContactListAssembly: TyphoonAssembly {
 
-    var contactDetailsAssembly:ContactDetailsAssembly?
+    var contactDetailsAssembly: ContactDetailsAssembly?
     
     dynamic func contactListWireframe() -> AnyObject {
         return TyphoonDefinition.withClass((ContactsListWireframe.self), configuration: { [unowned self] (definition) -> Void in
@@ -75,7 +75,7 @@ class ContactListAssembly: TyphoonAssembly {
 
 class ContactDetailsAssembly: TyphoonAssembly {
     var avatarChooserAssembly: AvatarChooserAssembly?
-    var contactListAssembly:ContactListAssembly?
+    var contactListAssembly: ContactListAssembly?
     
     dynamic func contactDetailsWireframe() -> AnyObject {
         return TyphoonDefinition.withClass((ContactDetailsWireframe.self), configuration: { [unowned self] (definition) -> Void in
@@ -109,7 +109,7 @@ class ContactDetailsAssembly: TyphoonAssembly {
 
 class AvatarChooserAssembly: TyphoonAssembly {
     
-    var contactDetailsAssembly:ContactDetailsAssembly?
+    var contactDetailsAssembly: ContactDetailsAssembly?
     
     dynamic func avatarChooserWireframe() -> AnyObject {
         return TyphoonDefinition.withClass((AvatarChooserWireframe.self), configuration: { [unowned self] (definition) -> Void in
@@ -142,4 +142,3 @@ class AvatarChooserAssembly: TyphoonAssembly {
 func mainStoryboard() -> UIStoryboard {
     return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 }
-
